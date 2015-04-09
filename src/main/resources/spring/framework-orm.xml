@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context-4.0.xsd
+							http://www.springframework.org/schema/tx 
+							http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+							http://www.springframework.org/schema/aop
+							http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	<import resource="frypan-DB.xml" />
+
+	<!-- sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>org.zj.framework.core.entity</value>
+				<value>com.zj.frypan.entity</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+<!-- 				<prop key="hibernate.current_session_context_class">thread</prop> -->
+<!-- 				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop> -->
+<!-- 				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop> -->
+<!-- 				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop> -->
+<!-- 				<prop key="hibernate.cache.provider_configuration_file_resource_path">c:\tmp</prop> -->
+			</props>
+		</property>
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+
+	<!-- 注解风格支持 -->
+	<aop:aspectj-autoproxy expose-proxy="true"/>
+	
+	<!-- XML 风格支持 -->
+	<aop:config proxy-target-class="true" expose-proxy="true">
+		<!-- <aop:advisor pointcut="execution(* com.zj.frypan.dao..*DAO*.*(..))" 
+			advice-ref="txAdvice"/> -->
+<!-- 		<aop:advisor pointcut="execution(* org.zj.framework.core.dao..*DAOImpl.*(..))" -->
+<!-- 			advice-ref="txAdvice" /> -->
+		<aop:advisor pointcut="execution(* org.zj.framework.core.dao..*DAOFacadeImpl.*(..))"
+					advice-ref="txAdvice" />
+		<aop:advisor
+			pointcut="execution(* org.zj.framework.core.service..*ServiceImpl.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="rw*" propagation="REQUIRED" read-only="false" rollback-for="Exception" />
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
+			<!-- for DAO -->
+			<tx:method name="save*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+			<tx:method name="update*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+			<tx:method name="delete*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>

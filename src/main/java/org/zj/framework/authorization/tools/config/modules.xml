@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules
+	xmlns="http://www.renters.modules"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.renters.modules modules.xsd">
+	<action>UPDATE</action>
+	<module>
+		<name>用户管理</name>
+		<code>m_001</code>
+		<url></url>
+	</module>
+	<module>
+		<name>用户管理</name>
+		<code>m_001</code>
+		<url></url>
+	</module>
+	<module>
+		<name>用户管理</name>
+		<code>m_001</code>
+		<url></url>
+	</module>
+	<module>
+		<name>用户管理</name>
+		<code>m_001</code>
+		<url></url>
+	</module>
+</modules>

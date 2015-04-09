@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="base-default" extends="struts-default">
+		<global-results>
+			<result name="error">/WEB-INF/error.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+	</package>
+
+	<package name="rest-package" extends="rest-default" namespace="/"/>
+	
+	<package name="default-package" extends="base-default">
+	</package>
+	
+	<include file="struts/"></include>
+</struts>

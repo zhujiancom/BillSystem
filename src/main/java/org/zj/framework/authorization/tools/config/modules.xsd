@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+			targetNamespace="http://www.renters.modules" elementFormDefault="qualified">
+	<element name="modules">
+		<complexType>
+			<sequence>
+				<element name="action">
+					<simpleType>
+						<restriction base="string">
+							<enumeration value="CREATE"/>
+							<enumeration value="UPDATE"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="module" maxOccurs="unbounded">
+				<complexType>
+					<sequence>
+						<element name="name" type="string"/>
+						<element name="code" type="string"/>
+						<element name="url" type="string"/>
+					</sequence>
+				</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
