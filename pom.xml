@@ -1,22 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.bill.sys</groupId>
-  <artifactId>BillSystem</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>收银记账系统</name>
-  
-  <properties>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bill.sys</groupId>
+	<artifactId>BillSystem</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>收银记账系统</name>
+
+	<properties>
 		<spring.version>4.0.3.RELEASE</spring.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
 		<struts.version>2.3.16.3</struts.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-  
-  <build>
-    <finalName>BillSystem</finalName>
-    <plugins>
+
+	<build>
+		<finalName>BillSystem</finalName>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -33,10 +33,10 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-	</plugins>
-  </build>
-  
-  <dependencies>
+		</plugins>
+	</build>
+
+	<dependencies>
 		<!-- Spring jar -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -191,18 +191,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Struts2 -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 			<version>${struts.version}</version>
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>tools</artifactId> -->
-<!-- 					<groupId>com.sun</groupId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
+			<!-- <exclusions> -->
+			<!-- <exclusion> -->
+			<!-- <artifactId>tools</artifactId> -->
+			<!-- <groupId>com.sun</groupId> -->
+			<!-- </exclusion> -->
+			<!-- </exclusions> -->
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -229,7 +229,7 @@
 			<artifactId>struts2-config-browser-plugin</artifactId>
 			<version>2.3.16.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
@@ -282,6 +282,18 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+		</dependency>
+
+		<!-- POI service -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.11</version>
 		</dependency>
 	</dependencies>
 </project>
