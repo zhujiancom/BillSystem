@@ -5,8 +5,6 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,8 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import org.zj.framework.core.entity.BaseEntity;
-
-import com.bill.sys.enums.SchemeType;
 
 /**
  * 
@@ -66,7 +62,8 @@ public class Scheme extends BaseEntity {
 	/* 方案单位， 代金券： 张， 套餐： 份*/
 	private String unitCode;
 	
-	private SchemeType type;
+	/* 方案类型 ， 由字典项中获取*/
+	private String type;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -141,13 +138,17 @@ public class Scheme extends BaseEntity {
 		this.unitCode = unitCode;
 	}
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="type")
-	public SchemeType getType() {
+	/**
+	 * @return the type
+	 */
+	public String getType() {
 		return type;
 	}
 
-	public void setType(SchemeType type) {
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
 		this.type = type;
 	}
 

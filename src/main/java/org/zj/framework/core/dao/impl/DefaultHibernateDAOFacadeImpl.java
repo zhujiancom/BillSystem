@@ -289,4 +289,33 @@ public class DefaultHibernateDAOFacadeImpl<T extends BaseEntity,PK extends Seria
 			}
 		}
 	}
+
+	/* 
+	 * @see org.zj.framework.core.dao.DAOFacade#queryUniqueByHQL(java.lang.String)
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public T queryUniqueByHQL(String hql) {
+		List<T> results = getCurrentSession().createQuery(hql).list();
+		if(CollectionUtils.isEmpty(results)){
+			return null;
+		}
+		return results.get(0);
+	}
+
+	/* 
+	 * @see org.zj.framework.core.dao.DAOFacade#queryUniqueByCriteria(org.hibernate.criterion.DetachedCriteria)
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public T queryUniqueByCriteria(DetachedCriteria dc) {
+		List<T> results = Collections.emptyList();
+		CriteriaImpl criteria = (CriteriaImpl) dc.getExecutableCriteria(getCurrentSession());
+		results = criteria.list();
+		if(CollectionUtils.isEmpty(results)){
+			return null;
+		}
+		T t = results.get(0);
+		return t;
+	}
 }
