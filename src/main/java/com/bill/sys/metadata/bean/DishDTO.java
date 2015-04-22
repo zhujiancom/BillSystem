@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bill.sys.metadata;
+package com.bill.sys.metadata.bean;
 
 import java.math.BigDecimal;
 

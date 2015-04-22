@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bill.sys;
+package com.bill.sys.mapping;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;

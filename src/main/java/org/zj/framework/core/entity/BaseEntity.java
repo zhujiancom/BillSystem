@@ -6,10 +6,19 @@ package org.zj.framework.core.entity;
 import java.io.Serializable;
 
 /**
- * @Description
+ * 
  * @author zj
- * @Date 2014年7月11日
  *	
+ * 项目名称：BillSystem
+ *
+ * 类名称：BaseEntity
+ *
+ * 包名称：org.zj.framework.core.entity
+ *
+ * Create Time: 2015年4月22日 上午8:50:44
+ *
+ * remark (备注):
+ *
  */
 public abstract class BaseEntity implements Serializable, Cloneable{
 

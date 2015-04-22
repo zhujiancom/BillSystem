@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.zj.framework.core.dao.datasource;
+package org.zj.framework.core.dao.repository;
 
 import org.springframework.stereotype.Repository;
 import org.zj.framework.core.dao.impl.DefaultHibernateDAOFacadeImpl;

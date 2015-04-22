@@ -12,13 +12,13 @@ import java.util.NoSuchElementException;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.zj.framework.core.exception.ExceptionConstant.Tools;
 import org.zj.framework.core.exception.ExceptionManage;
+import org.zj.framework.tools.StringUtils;
 
 /**
  * @Description
@@ -124,7 +124,7 @@ public class GlobalSettings{
 	public Locale getDefaultLocale(){
 		try{
 			String defaultLocaleTemp = configuration.getString(PropertyConstants.LOCALE);
-			if(!StringUtils.isEmpty(defaultLocaleTemp)){
+			if(!StringUtils.hasText(defaultLocaleTemp)){
 				defaultLocale = defaultLocaleTemp;
 			}
 		}
@@ -134,22 +134,7 @@ public class GlobalSettings{
 		catch(Exception e){
 			logger.debug(e);
 		}
-		String[] parts = org.springframework.util.StringUtils
-				.tokenizeToStringArray(defaultLocale,"_ ",false,false);
-		String language = (parts.length > 0 ? parts[0] : "");
-		String country = (parts.length > 1 ? parts[1] : "");
-		String variant = "";
-		if(parts.length >= 2){
-			int endIndexOfCountryCode = defaultLocale.indexOf(country)
-					+ country.length();
-			variant = StringUtils.trim(defaultLocale
-					.substring(endIndexOfCountryCode));
-			if(variant.startsWith("_")){
-				variant = org.springframework.util.StringUtils
-						.trimLeadingCharacter(variant,'_');
-			}
-		}
-		return new Locale(language,country,variant);
+		return StringUtils.parseLocaleString(defaultLocale);
 	}
 
 	/**
