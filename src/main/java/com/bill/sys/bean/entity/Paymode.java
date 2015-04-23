@@ -4,13 +4,17 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.enums.CommonEnums;
 
 /**
  * 
@@ -39,9 +43,11 @@ public class Paymode extends BaseEntity {
 	
 	private Long pmid;
 	
-	private String modeNo;
+	private String pmNo;
 	
-	private String modeName;
+	private String pmName;
+	
+	private CommonEnums.YOrN incomeFlag;
 	
 	private String remark;
 	
@@ -57,21 +63,31 @@ public class Paymode extends BaseEntity {
 	}
 
 	@Column(name="paymode_no")
-	public String getModeNo() {
-		return modeNo;
+	public String getPmNo() {
+		return pmNo;
 	}
 
-	public void setModeNo(String modeNo) {
-		this.modeNo = modeNo;
+	public void setPmNo(String pmNo) {
+		this.pmNo = pmNo;
 	}
 
 	@Column(name="paymode_name")
-	public String getModeName() {
-		return modeName;
+	public String getPmName() {
+		return pmName;
 	}
 
-	public void setModeName(String modeName) {
-		this.modeName = modeName;
+	public void setPmName(String pmName) {
+		this.pmName = pmName;
+	}
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="income_flag")
+	public CommonEnums.YOrN getIncomeFlag() {
+		return incomeFlag;
+	}
+
+	public void setIncomeFlag(CommonEnums.YOrN incomeFlag) {
+		this.incomeFlag = incomeFlag;
 	}
 
 	@Column(name="remark")
@@ -90,6 +106,7 @@ public class Paymode extends BaseEntity {
 	}
 
 	@Override
+	@Version
 	public Integer getVersion() {
 		return version;
 	}

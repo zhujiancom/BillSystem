@@ -23,7 +23,7 @@ import org.zj.framework.core.sql.SqlGenerator;
  * @author zj
  * @Date 2014年7月25日
  */
-@Service("SysUserServiceImpl")
+@Service("SysUserService")
 public class SysUserServiceImpl extends BaseService<SysUserEntity, Long>
 implements ISysUserService{
 	@Autowired

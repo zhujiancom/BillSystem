@@ -24,6 +24,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import org.zj.framework.core.entity.BaseEntity;
 import org.zj.framework.core.enums.CommonEnums;
@@ -87,9 +88,6 @@ public class Order extends BaseEntity {
 	
 	/* 实收金额   */
 	private BigDecimal realAmount;
-	
-	/* 入账金额  */
-	private List<PostOrderAccount> postOrderAccount;
 	
 	/* 具体菜品明细  */
 	private List<OrderItem> items;
@@ -274,21 +272,6 @@ public class Order extends BaseEntity {
 	}
 
 	/**
-	 * @return the postOrderAccount
-	 */
-	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="order")
-	public List<PostOrderAccount> getPostOrderAccount() {
-		return postOrderAccount;
-	}
-
-	/**
-	 * @param postOrderAccount the postOrderAccount to set
-	 */
-	public void setPostOrderAccount(List<PostOrderAccount> postOrderAccount) {
-		this.postOrderAccount = postOrderAccount;
-	}
-
-	/**
 	 * @return the items
 	 */
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="order")
@@ -355,7 +338,6 @@ public class Order extends BaseEntity {
 	@Override
 	@Transient
 	public Serializable getId() {
-		// TODO Auto-generated method stub
 		return oid;
 	}
 
@@ -363,6 +345,7 @@ public class Order extends BaseEntity {
 	 * @see org.zj.framework.core.entity.BaseEntity#getVersion()
 	 */
 	@Override
+	@Version
 	public Integer getVersion() {
 		return version;
 	}
@@ -371,6 +354,7 @@ public class Order extends BaseEntity {
 	 * @see org.zj.framework.core.entity.BaseEntity#setVersion(java.lang.Integer)
 	 */
 	@Override
+	@Version
 	public void setVersion(Integer version) {
 		this.version = version;
 	}

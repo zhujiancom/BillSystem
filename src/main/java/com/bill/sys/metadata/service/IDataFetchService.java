@@ -13,7 +13,7 @@ public interface IDataFetchService {
 	/**
 	 * 
 	 *
-	 * Describle(描述)：获取所有的菜品
+	 * Describle(描述)：获取指定类型的菜品
 	 *
 	 * 方法名称：fetchAllDishes
 	 *
@@ -23,7 +23,7 @@ public interface IDataFetchService {
 	 *  
 	 * @return
 	 */
-	List<DishDTO> fetchAllDishes();
+	List<DishDTO> fetchAllDishesByType(String typeno);
 	
 	/**
 	 * 

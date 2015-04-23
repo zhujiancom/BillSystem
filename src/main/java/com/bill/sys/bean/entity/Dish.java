@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -106,11 +108,13 @@ public class Dish extends BaseEntity {
 	}
 
 	@Override
+	@Transient
 	public Serializable getId() {
 		return did;
 	}
 
 	@Override
+	@Version
 	public Integer getVersion() {
 		return version;
 	}

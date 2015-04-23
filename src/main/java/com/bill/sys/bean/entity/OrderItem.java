@@ -5,6 +5,9 @@ package com.bill.sys.bean.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
 import org.zj.framework.core.entity.BaseEntity;
 
 /**
@@ -27,11 +30,12 @@ public class OrderItem extends BaseEntity {
 	 * 
 	 */
 	private static final long serialVersionUID = 8712829612949997706L;
-
+	private Integer version;
 	/* 
 	 * @see org.zj.framework.core.entity.BaseEntity#getId()
 	 */
 	@Override
+	@Transient
 	public Serializable getId() {
 		// TODO Auto-generated method stub
 		return null;
@@ -41,9 +45,9 @@ public class OrderItem extends BaseEntity {
 	 * @see org.zj.framework.core.entity.BaseEntity#getVersion()
 	 */
 	@Override
+	@Version
 	public Integer getVersion() {
-		// TODO Auto-generated method stub
-		return null;
+		return version;
 	}
 
 	/* 
@@ -51,8 +55,7 @@ public class OrderItem extends BaseEntity {
 	 */
 	@Override
 	public void setVersion(Integer version) {
-		// TODO Auto-generated method stub
-
+		this.version = version;
 	}
 
 }

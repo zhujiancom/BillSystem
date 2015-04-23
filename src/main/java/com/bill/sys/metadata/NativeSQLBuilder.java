@@ -2,7 +2,7 @@ package com.bill.sys.metadata;
 
 public class NativeSQLBuilder {
 	/* 查询所有菜品 */
-	public static final String QUERY_DISH="select ch_dishno,vch_dishname,ch_typeno,num_price1 from dbo.v_bt_dish";
+	public static final String QUERY_DISH_By_TYPENO="select ch_dishno,vch_dishname,ch_typeno,num_price1 from dbo.v_bt_dish where ch_typeno=?";
 	/* 查询所有 菜品类型*/
 	public static final String QUERY_DISH_TYPE="select ch_typeno,vch_typename from dbo.cybr_bt_dish_type";
 	/* 查询order detail 信息*/

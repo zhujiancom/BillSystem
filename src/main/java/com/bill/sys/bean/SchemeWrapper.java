@@ -2,6 +2,9 @@ package com.bill.sys.bean;
 
 import java.math.BigDecimal;
 
+import org.zj.framework.core.entity.base.DictItem;
+import org.zj.framework.core.service.IDictItemService;
+import org.zj.framework.tools.SpringUtils;
 import org.zj.framework.tools.StringUtils;
 
 import com.bill.sys.bean.entity.Scheme;
@@ -39,8 +42,9 @@ public class SchemeWrapper {
 		StringBuffer name = new StringBuffer();
 		if(StringUtils.hasText(scheme.getUnitCode())){
 			//如果有数量单位，获取数量单位名称
-			//TODO
-			String unitName = "";
+			IDictItemService dictService = (IDictItemService) SpringUtils.getBean("DictionaryService");
+			DictItem item = dictService.getDictItem("UNIT", scheme.getUnitCode());
+			String unitName = item.getItemCname();
 			name.append(scheme.getName()).append("【").append(+this.count).append("】").append(unitName);
 		}else{
 			name.append(scheme.getName()).append("-").append(postAmount);

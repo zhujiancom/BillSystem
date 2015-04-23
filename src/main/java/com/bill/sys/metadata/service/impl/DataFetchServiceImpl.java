@@ -37,8 +37,8 @@ public class DataFetchServiceImpl implements IDataFetchService {
 	private JdbcTemplate sqlServerJdbcTemplate;
 	
 	@Override
-	public List<DishDTO> fetchAllDishes() {
-		List<DishDTO> dishes = sqlServerJdbcTemplate.query(NativeSQLBuilder.QUERY_DISH, new BeanRowMappers<DishDTO>(DishDTO.class));
+	public List<DishDTO> fetchAllDishesByType(String typeno) {
+		List<DishDTO> dishes = sqlServerJdbcTemplate.query(NativeSQLBuilder.QUERY_DISH_By_TYPENO,new Object[]{typeno}, new BeanRowMappers<DishDTO>(DishDTO.class));
 		return dishes;
 	}
 

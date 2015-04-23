@@ -22,7 +22,6 @@ public abstract class BaseService<T extends BaseEntity, PK extends Serializable>
 	@Autowired
 	protected DAOFacade<T, PK> baseDAO;
 
-
 	protected Log logger(){
 		if(logger == null){
 			return LogFactory.getLog(BaseService.class);
@@ -31,17 +30,76 @@ public abstract class BaseService<T extends BaseEntity, PK extends Serializable>
 		}
 	}
 
+	/**
+	 * 
+	 * Describle(描述)： 创建
+	 *
+	 * 方法名称：rwCreate
+	 *
+	 * 所在类名：BaseService
+	 *
+	 * Create Time:2015年4月23日 下午4:56:02
+	 *  
+	 * @param entity
+	 */
 	public void rwCreate(T entity){
 		baseDAO.save(entity);
 	}
+	public void rwCreate(T[] entities){
+		baseDAO.save(entities);
+	}
 
+	/**
+	 * 
+	 * Describle(描述)： 更新
+	 *
+	 * 方法名称：rwUpdate
+	 *
+	 * 所在类名：BaseService
+	 *
+	 * Create Time:2015年4月23日 下午4:55:55
+	 *  
+	 * @param entity
+	 */
 	public void rwUpdate(T entity){
 		baseDAO.update(entity);
 	}
+	public void rwUpdate(T[] entity){
+		baseDAO.update(entity);
+	}
 
+	/**
+	 * 
+	 * Describle(描述)：删除
+	 *
+	 * 方法名称：rwDelete
+	 *
+	 * 所在类名：BaseService
+	 *
+	 * Create Time:2015年4月23日 下午4:55:43
+	 *  
+	 * @param pk
+	 */
 	public void rwDelete(PK pk){
 		baseDAO.delete(pk);
 	}
+	public void rwDelete(T[] entities){
+		baseDAO.delete(entities);
+	}
+	
+	/**
+	 * 
+	 * Describle(描述)： get
+	 *
+	 * 方法名称：get
+	 *
+	 * 所在类名：BaseService
+	 *
+	 * Create Time:2015年4月23日 下午4:56:18
+	 *  
+	 * @param pk
+	 * @return
+	 */
 	public T get(PK pk){
 		return baseDAO.get(pk);
 	}
