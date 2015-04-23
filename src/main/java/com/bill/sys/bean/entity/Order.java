@@ -28,6 +28,7 @@ import javax.persistence.Version;
 
 import org.zj.framework.core.entity.BaseEntity;
 import org.zj.framework.core.enums.CommonEnums;
+import org.zj.framework.tools.StringUtils;
 
 import com.bill.sys.bean.PairKey;
 import com.bill.sys.bean.SchemeWrapper;
@@ -79,6 +80,9 @@ public class Order extends BaseEntity {
 	
 	/* 订单支付方式对应金额 */
 	private Map<String,BigDecimal> paymodeMapping=new HashMap<String,BigDecimal>();
+	
+	/* 订单所有的支付方式 ，用(,)逗号分割*/
+	private String paymodes;
 
 	/* 折扣方案 名称 */
 	private String schemeName;
@@ -302,6 +306,21 @@ public class Order extends BaseEntity {
 	}
 
 	/**
+	 * @return the paymodes
+	 */
+	@Column(name="paymodes")
+	public String getPaymodes() {
+		return paymodes;
+	}
+
+	/**
+	 * @param paymodes the paymodes to set
+	 */
+	public void setPaymodes(String paymodes) {
+		this.paymodes = paymodes;
+	}
+
+	/**
 	 * @return the unusual
 	 */
 	@Enumerated(EnumType.STRING)
@@ -357,6 +376,29 @@ public class Order extends BaseEntity {
 	@Version
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+	
+	/**
+	 * 
+	 *
+	 * Describle(描述)：添加order所使用的支付方式和对应的支付金额
+	 *
+	 * 方法名称：addPayMode
+	 *
+	 * 所在类名：Order
+	 *
+	 * Create Time:2015年4月23日 下午10:49:03
+	 *  
+	 * @param paymodeNo
+	 * @param amount
+	 */
+	public void addPayMode(String paymodeNo,BigDecimal amount){
+		paymodeMapping.put(paymodeNo, amount);
+		if(!StringUtils.hasLength(paymodes)){
+			paymodes = paymodeNo;
+		}else{
+			paymodes = paymodes+","+paymodeNo;
+		}
 	}
 
 }

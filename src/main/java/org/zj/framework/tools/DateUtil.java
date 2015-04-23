@@ -4,6 +4,7 @@
 package org.zj.framework.tools;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,8 +12,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import org.apache.commons.lang3.time.DateUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * @Description
@@ -21,16 +20,6 @@ import org.apache.commons.logging.LogFactory;
  *	
  */
 public class DateUtil extends DateUtils{
-	private transient Log logger = LogFactory.getLog(DateUtil.class);
-
-	protected Log logger(){
-		if(logger == null){
-			return LogFactory.getLog(DateUtil.class);
-		}else{
-			return logger;
-		}
-	}
-
 	/**
 	 * 不可被实例化
 	 */
@@ -189,5 +178,69 @@ public class DateUtil extends DateUtils{
 		Calendar cal = Calendar.getInstance();
 		cal.setTimeZone(timezone);
 		return cal.getTime();
+	}
+	
+	/**
+	 * 
+	 *
+	 * Describle(描述)：string字符串转换成Date
+	 *
+	 * 方法名称：parseDate
+	 *
+	 * 所在类名：DateUtil
+	 *
+	 * Create Time:2015年4月23日 下午10:18:38
+	 *  
+	 * @param datestr
+	 * @return
+	 */
+	public static Date parseDate(String datestr){
+		try {
+			return parseDate(datestr, new String[]{DEFAULT_DATE_PATTERN});
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static Date parseTime(String datestr){
+		try {
+			return parseDate(datestr, new String[]{DEFAULT_TIME_PATTERN});
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null; 
+	}
+	
+	/**
+	 * 获取一天的最后时间
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static Date getEndTimeOfDay(Date date){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		c.set(Calendar.HOUR_OF_DAY, 23);
+		c.set(Calendar.MINUTE, 59);
+		c.set(Calendar.SECOND, 59);
+		c.set(Calendar.MILLISECOND, 0);
+		return c.getTime();
+	}
+	
+	/**
+	 * 获取一天的零点时间
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static Date getStartTimeOfDay(Date date){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		c.set(Calendar.HOUR_OF_DAY, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		c.set(Calendar.MILLISECOND, 0);
+		return c.getTime();
 	}
 }
