@@ -27,10 +27,10 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 
 import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.enums.BusinessEnums.SchemeType;
 import org.zj.framework.core.enums.CommonEnums;
 import org.zj.framework.tools.StringUtils;
 
-import com.bill.sys.bean.PairKey;
 import com.bill.sys.bean.SchemeWrapper;
 
 /**
@@ -97,7 +97,7 @@ public class Order extends BaseEntity {
 	private List<OrderItem> items;
 	
 	/* 记录该订单使用的方案 */
-	private Map<PairKey<String,String>,SchemeWrapper> schemes; 
+	private Map<SchemeType,SchemeWrapper> schemes; 
 	
 	/* 该单有异常 */
 	private CommonEnums.YOrN unusual;
@@ -294,17 +294,14 @@ public class Order extends BaseEntity {
 	 * @return the schemes
 	 */
 	@Transient
-	public Map<PairKey<String, String>, SchemeWrapper> getSchemes() {
+	public Map<SchemeType, SchemeWrapper> getSchemes() {
 		return schemes;
 	}
 
-	/**
-	 * @param schemes the schemes to set
-	 */
-	public void setSchemes(Map<PairKey<String, String>, SchemeWrapper> schemes) {
+	public void setSchemes(Map<SchemeType, SchemeWrapper> schemes) {
 		this.schemes = schemes;
 	}
-
+	
 	/**
 	 * @return the paymodes
 	 */

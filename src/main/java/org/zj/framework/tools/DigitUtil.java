@@ -31,18 +31,18 @@ public class DigitUtil {
 	 * @param precision
 	 * @return
 	 */
-	public static BigDecimal precentDown(BigDecimal member,BigDecimal divisor,int precision){
-		return member.divide(divisor).setScale(precision, BigDecimal.ROUND_HALF_DOWN);
+	public static BigDecimal precentDown(BigDecimal member,int precision){
+		return member.divide(new BigDecimal(100)).setScale(precision, BigDecimal.ROUND_HALF_DOWN);
 	}
 	
-	public static BigDecimal precentUp(BigDecimal member,BigDecimal divisor,int precision){
-		return member.divide(divisor).setScale(precision, BigDecimal.ROUND_HALF_UP);
+	public static BigDecimal precentUp(BigDecimal member,int precision){
+		return member.divide(new BigDecimal(100)).setScale(precision, BigDecimal.ROUND_HALF_UP);
 	}
-	public static BigDecimal precentDown(BigDecimal member,BigDecimal divisor){
-		return precentDown(member,divisor,2);
+	public static BigDecimal precentDown(BigDecimal member){
+		return precentDown(member,2);
 	}
 	public static BigDecimal precentUp(BigDecimal member,BigDecimal divisor){
-		return precentUp(member,divisor,2);
+		return precentUp(member,2);
 	}
 	
 	/**

@@ -24,7 +24,8 @@ import org.springframework.context.ApplicationContextAware;
  *
  */
 public class SpringUtils implements ApplicationContextAware {
-    private ApplicationContext applicationContext;
+    @SuppressWarnings("unused")
+	private ApplicationContext applicationContext;
     private static ApplicationContext staticapplicationcontext;
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

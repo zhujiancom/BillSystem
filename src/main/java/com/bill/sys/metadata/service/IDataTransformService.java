@@ -1,6 +1,9 @@
 package com.bill.sys.metadata.service;
 
 import java.util.Date;
+import java.util.List;
+
+import com.bill.sys.bean.entity.Order;
 
 public interface IDataTransformService {
 	/**
@@ -15,7 +18,7 @@ public interface IDataTransformService {
 	 *  
 	 * @param sdate
 	 */
-	void transformOrderInfo(Date sdate);
+	List<Order> transformOrderInfo(Date sdate);
 	
 	/**
 	 * 

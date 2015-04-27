@@ -33,17 +33,31 @@
 
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">
-		<property name="driverClass" value="${jdbc.driver}" />
-		<property name="jdbcUrl" value="${jdbc.url}" />
-		<property name="username" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
+		<property name="driverClass" value="${mysql.jdbc.driver}" />
+		<property name="jdbcUrl" value="${mysql.jdbc.url}" />
+		<property name="username" value="${mysql.jdbc.username}" />
+		<property name="password" value="${mysql.jdbc.password}" />
 		<property name="partitionCount" value="3" />
 		<property name="acquireIncrement" value="5" />
 		<property name="maxConnectionsPerPartition" value="50" />
-		<property name="poolName" value="frypanPool" />
+		<property name="poolName" value="rciPool4MySQL" />
 		<property name="closeConnectionWatch" value="true" />
 		<property name="logStatementsEnabled" value="true" />
 		<property name="initSQL" value="SELECT 1 FROM DUAL"></property>
+	</bean>
+	
+	<bean id="SQLServerDataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${sqlserver.jdbc.driver}" />
+		<property name="jdbcUrl" value="${sqlserver.jdbc.url}" />
+		<property name="username" value="${sqlserver.jdbc.username}" />
+		<property name="password" value="${sqlserver.jdbc.password}" />
+		<property name="partitionCount" value="3" />
+		<property name="acquireIncrement" value="5" />
+		<property name="maxConnectionsPerPartition" value="50" />
+		<property name="poolName" value="rciPool4SQLServer" />
+		<property name="closeConnectionWatch" value="true" />
+		<property name="logStatementsEnabled" value="true" />
 	</bean>
 
 </beans>

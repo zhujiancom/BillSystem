@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping map-null="false" map-empty-string="false">
+		<class-a>com.rci.bean.entity.DishType</class-a>
+		<class-b>com.rci.metadata.dto.DishTypeDTO</class-b>
+		<field>
+			<a>dtNo</a>
+			<b>typeno</b>
+		</field>
+		<field>
+			<a>dtName</a>
+			<b>typename</b>
+		</field>
+	</mapping>
+	
+	<mapping map-null="false" map-empty-string="false">
+		<class-a>com.rci.bean.entity.Dish</class-a>
+		<class-b>com.rci.metadata.dto.DishDTO</class-b>
+		<field-exclude>
+			<a>dishType</a>
+			<b>dishType</b>
+		</field-exclude>
+	</mapping>
+	
+	<mapping map-null="false" map-empty-string="false">
+		<class-a>com.rci.bean.entity.Order</class-a>
+		<class-b>com.rci.metadata.dto.OrderDTO</class-b>
+		<field>
+			<a>originPrice</a>
+			<b>originAmount</b>
+		</field>
+	</mapping>
+	
+	<mapping map-null="false" map-empty-string="false">
+		<class-a>com.rci.bean.entity.Order</class-a>
+		<class-b>com.rci.ui.swing.vos.OrderVO</class-b>
+		<field>
+			<a>oid</a>
+			<b>orderId</b>
+		</field>
+		<field>
+			<a>originPrice</a>
+			<b>originAmount</b>
+		</field>
+		<field>
+			<a>realAmount</a>
+			<b>actualAmount</b>
+		</field>
+	</mapping>
+</mappings>

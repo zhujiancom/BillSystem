@@ -37,5 +37,7 @@ public interface DAOFacade<T,PK extends Serializable>{
 	public T queryUniqueByHQL(String hql);
 	
 	public T queryUniqueByCriteria(DetachedCriteria dc);
+	
+	public int executeHQL(String hql);
 
 }

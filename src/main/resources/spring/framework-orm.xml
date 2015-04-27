@@ -47,6 +47,7 @@
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
 
 	<!-- 注解风格支持 -->
+	<tx:annotation-driven />
 	<aop:aspectj-autoproxy expose-proxy="true"/>
 	
 	<!-- XML 风格支持 -->
@@ -68,13 +69,17 @@
 			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
 			<tx:method name="*" propagation="REQUIRED" read-only="true" />
 			<!-- for DAO -->
-			<tx:method name="save*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
-			<tx:method name="update*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
-			<tx:method name="delete*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+<!-- 			<tx:method name="save*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/> -->
+<!-- 			<tx:method name="update*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/> -->
+<!-- 			<tx:method name="delete*" propagation="REQUIRED" read-only="false" rollback-for="Exception"/> -->
 		</tx:attributes>
 	</tx:advice>
 
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="sqlServerJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="SQLServerDataSource" />
 	</bean>
 </beans>

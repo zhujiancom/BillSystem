@@ -51,7 +51,7 @@ public class DataTransformServiceImpl implements IDataTransformService {
 	private IOrderService orderService;
 	
 	@Override
-	public void transformOrderInfo(Date sdate) {
+	public List<Order> transformOrderInfo(Date sdate) {
 		Date edate = DateUtil.getEndTimeOfDay(sdate);
 		//1. 根据日期获取当前时间之前的符合日期订单
 		List<OrderDTO> orderDTOs = fetchService.fetchOrders(sdate, edate);
@@ -75,6 +75,7 @@ public class DataTransformServiceImpl implements IDataTransformService {
 			orders.add(value);
 		}
 		orderService.rwInsertOrders(orders.toArray(new Order[0]));
+		return orders;
 	}
 
 	@Override

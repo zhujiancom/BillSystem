@@ -3,8 +3,6 @@ package com.bill.sys.service.impl;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.zj.framework.core.enums.BusinessEnums.MarkType;
 import org.zj.framework.core.enums.CommonEnums;
 import org.zj.framework.core.service.BaseService;
@@ -37,7 +35,6 @@ public class FetchMarkServiceImpl extends BaseService<DataFetchMark, Long>
 	}
 
 	@Override
-	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void rwSystemInit() {
 		DataFetchMark mark = new DataFetchMark(MarkType.SYSTEM_INIT);
 		mark.setMarkFlag(CommonEnums.YOrN.Y);
@@ -45,7 +42,6 @@ public class FetchMarkServiceImpl extends BaseService<DataFetchMark, Long>
 	}
 
 	@Override
-	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void rwOrderMark(String day) {
 		DataFetchMark mark = new DataFetchMark(MarkType.ORDER_FETCH);
 		mark.setRciDate(day);
@@ -55,7 +51,6 @@ public class FetchMarkServiceImpl extends BaseService<DataFetchMark, Long>
 	}
 	
 	@Override
-	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void rwUpdateMark(DataFetchMark mark){
 		mark.setSavepoint(DateUtil.getCurrentDate());
 		baseDAO.update(mark);

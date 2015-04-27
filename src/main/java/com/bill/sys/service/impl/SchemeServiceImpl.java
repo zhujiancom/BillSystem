@@ -5,6 +5,7 @@ package com.bill.sys.service.impl;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
+import org.zj.framework.core.enums.BusinessEnums.SchemeType;
 import org.zj.framework.core.service.BaseService;
 
 import com.bill.sys.bean.entity.Scheme;
@@ -28,7 +29,7 @@ public class SchemeServiceImpl extends BaseService<Scheme, Long> implements
 		ISchemeService {
 
 	@Override
-	public Scheme getScheme(String type, String paymodeno) {
+	public Scheme getScheme(SchemeType type, String paymodeno) {
 		DetachedCriteria sdc = DetachedCriteria.forClass(Scheme.class);
 		sdc.add(Restrictions.eq("type", type)).add(Restrictions.eq("paymodeno", paymodeno));
 		Scheme scheme = baseDAO.queryUniqueByCriteria(sdc);

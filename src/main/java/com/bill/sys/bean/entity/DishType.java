@@ -54,7 +54,7 @@ public class DishType extends BaseEntity {
 	
 	private List<Dish> dishes;
 	
-	private CommonEnums.YOrN beDiscount;
+	private CommonEnums.YOrN notDiscount;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -95,13 +95,13 @@ public class DishType extends BaseEntity {
 	}
 
 	@Enumerated(EnumType.STRING)
-	@Column(name="be_discount")
-	public CommonEnums.YOrN getBeDiscount() {
-		return beDiscount;
+	@Column(name="not_discount")
+	public CommonEnums.YOrN getNotDiscount() {
+		return notDiscount;
 	}
 
-	public void setBeDiscount(CommonEnums.YOrN beDiscount) {
-		this.beDiscount = beDiscount;
+	public void setNotDiscount(CommonEnums.YOrN notDiscount) {
+		this.notDiscount = notDiscount;
 	}
 
 	@Override

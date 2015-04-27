@@ -49,6 +49,8 @@ public class OrderAccountRef extends BaseEntity {
 	
 	private Long accId;
 	
+	private String accNo;
+	
 	private BigDecimal realAmount;
 	
 	private String orderNo;
@@ -73,6 +75,21 @@ public class OrderAccountRef extends BaseEntity {
 
 	public void setAccId(Long accId) {
 		this.accId = accId;
+	}
+
+	/**
+	 * @return the accNo
+	 */
+	@Column(name="accno")
+	public String getAccNo() {
+		return accNo;
+	}
+
+	/**
+	 * @param accNo the accNo to set
+	 */
+	public void setAccNo(String accNo) {
+		this.accNo = accNo;
 	}
 
 	@Column(name="real_amount")

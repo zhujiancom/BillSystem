@@ -243,4 +243,46 @@ public class DateUtil extends DateUtils{
 		c.set(Calendar.MILLISECOND, 0);
 		return c.getTime();
 	}
+	
+	public static boolean isDateFormat(String dateStr){
+		return isDateFormat(dateStr,DEFAULT_DATE_PATTERN);
+	}
+	
+	public static boolean isDateFormat(String dateStr,final String... parsePatterns){
+		return parseFormat(dateStr,parsePatterns);
+	}
+	
+	/**
+	 * 
+	 * Describle(描述)：
+	 *
+	 * 方法名称：parseFormat 解析日期格式是否正确
+	 *
+	 * 所在类名：DateUtil
+	 *
+	 * Create Time:2015年4月24日 下午2:18:36
+	 *  
+	 * @param str
+	 * @param parsePatterns
+	 * @return
+	 */
+	private static boolean parseFormat(String str,String[] parsePatterns){
+		boolean matched = false;
+		if(str == null || parsePatterns == null){
+			throw new IllegalArgumentException("Date and Patterns must not be null");
+		}
+		SimpleDateFormat parser = new SimpleDateFormat();
+		for (final String parsePattern : parsePatterns) {
+			parser.applyPattern(parsePattern);
+			parser.setLenient(false);
+			try {
+				parser.parse(str);
+				matched = true;
+				break;
+			} catch (ParseException e) {
+				continue;
+			}
+		}
+		return matched;
+	}
 }
