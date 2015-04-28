@@ -3,11 +3,11 @@ package com.bill.sys.metadata.service;
 import java.util.Date;
 import java.util.List;
 
-import com.bill.sys.metadata.bean.DishDTO;
-import com.bill.sys.metadata.bean.DishTypeDTO;
-import com.bill.sys.metadata.bean.OrderDTO;
-import com.bill.sys.metadata.bean.OrderItemDTO;
-import com.bill.sys.metadata.bean.PaymodeDTO;
+import com.bill.sys.metadata.dto.DishDTO;
+import com.bill.sys.metadata.dto.DishTypeDTO;
+import com.bill.sys.metadata.dto.OrderDTO;
+import com.bill.sys.metadata.dto.OrderItemDTO;
+import com.bill.sys.metadata.dto.PaymodeDTO;
 
 public interface IDataFetchService {
 	/**

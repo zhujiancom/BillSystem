@@ -59,7 +59,9 @@ public class FetchMarkServiceImpl extends BaseService<DataFetchMark, Long>
 	@Override
 	public void rwDeleteMark(String day) {
 		DataFetchMark mark = getMarkRecordByDay(day);
-		baseDAO.delete(mark);
+		if(mark != null){
+			baseDAO.delete(mark);
+		}
 	}
 
 }

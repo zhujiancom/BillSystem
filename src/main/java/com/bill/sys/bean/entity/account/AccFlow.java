@@ -6,6 +6,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +18,9 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 
 import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.enums.BusinessEnums.DataGenerateType;
+import org.zj.framework.core.enums.BusinessEnums.FlowType;
+import org.zj.framework.core.enums.CommonEnums.YOrN;
 
 /**
  * 
@@ -49,6 +54,9 @@ public class AccFlow extends BaseEntity {
 	/* 生成时间 */
 	private Date time;
 	
+	/* 流水类型， 收入，支出，转账 */
+	private FlowType flowType;
+	
 	/* 分类 */
 	private String classify;
 	
@@ -62,6 +70,17 @@ public class AccFlow extends BaseEntity {
 	
 	/* 备注*/
 	private String remark;
+	
+	/* 是否手动更新 */
+	private YOrN manualUpdate;
+	
+	private DataGenerateType generateType = DataGenerateType.MANUAL;
+	
+	public AccFlow(){}
+	
+	public AccFlow(Long accId){
+		this.accId = accId;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -136,6 +155,54 @@ public class AccFlow extends BaseEntity {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	/**
+	 * @return the flowType
+	 */
+	@Enumerated(EnumType.STRING)
+	@Column(name="flow_type")
+	public FlowType getFlowType() {
+		return flowType;
+	}
+
+	/**
+	 * @param flowType the flowType to set
+	 */
+	public void setFlowType(FlowType flowType) {
+		this.flowType = flowType;
+	}
+
+	/**
+	 * @return the manualUpdate
+	 */
+	@Enumerated(EnumType.STRING)
+	@Column(name="manual_update")
+	public YOrN getManualUpdate() {
+		return manualUpdate;
+	}
+
+	/**
+	 * @param manualUpdate the manualUpdate to set
+	 */
+	public void setManualUpdate(YOrN manualUpdate) {
+		this.manualUpdate = manualUpdate;
+	}
+
+	/**
+	 * @return the generateType
+	 */
+	@Enumerated(EnumType.STRING)
+	@Column(name="data_generate_type")
+	public DataGenerateType getGenerateType() {
+		return generateType;
+	}
+
+	/**
+	 * @param generateType the generateType to set
+	 */
+	public void setGenerateType(DataGenerateType generateType) {
+		this.generateType = generateType;
 	}
 
 	@Override

@@ -40,9 +40,9 @@ public interface IDataLoaderService {
 	 *
 	 * 所在类名：IDataLoaderService
 	 *
-	 * Create Time:2015年4月28日 上午10:05:15
+	 * Create Time:2015年4月28日 下午11:39:21
 	 *  
-	 * @param orderNo
+	 * @param date
 	 */
-	void generateAccountFlow(String orderNo);
+	void generateAccountFlow(Date date);
 }

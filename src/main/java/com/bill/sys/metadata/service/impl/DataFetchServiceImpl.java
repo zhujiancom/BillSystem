@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.bill.sys.mapping.BeanRowMappers;
 import com.bill.sys.metadata.NativeSQLBuilder;
-import com.bill.sys.metadata.bean.DishDTO;
-import com.bill.sys.metadata.bean.DishTypeDTO;
-import com.bill.sys.metadata.bean.OrderDTO;
-import com.bill.sys.metadata.bean.OrderItemDTO;
-import com.bill.sys.metadata.bean.PaymodeDTO;
+import com.bill.sys.metadata.dto.DishDTO;
+import com.bill.sys.metadata.dto.DishTypeDTO;
+import com.bill.sys.metadata.dto.OrderDTO;
+import com.bill.sys.metadata.dto.OrderItemDTO;
+import com.bill.sys.metadata.dto.PaymodeDTO;
 import com.bill.sys.metadata.service.IDataFetchService;
 /**
  * 

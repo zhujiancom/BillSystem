@@ -32,7 +32,7 @@ public interface DAOFacade<T,PK extends Serializable>{
 
 	public List<Map<String,Object>> queryListBySQL(String sql);
 
-	public List<T> queryListByCriteria(DetachedCriteria dc);
+	public <E> List<E> queryListByCriteria(DetachedCriteria dc);
 	
 	public T queryUniqueByHQL(String hql);
 	

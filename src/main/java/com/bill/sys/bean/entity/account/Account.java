@@ -66,6 +66,9 @@ public class Account extends BaseEntity {
 	/*流出总计*/
 	private BigDecimal expenseAmount;
 	
+	/* 当前余额  */
+	private BigDecimal balance;
+	
 	private String description;
 	
 	/* 父账户  */
@@ -137,6 +140,21 @@ public class Account extends BaseEntity {
 
 	public void setExpenseAmount(BigDecimal expenseAmount) {
 		this.expenseAmount = expenseAmount;
+	}
+
+	/**
+	 * @return the balance
+	 */
+	@Column(name="balance")
+	public BigDecimal getBalance() {
+		return balance;
+	}
+
+	/**
+	 * @param balance the balance to set
+	 */
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
 	}
 
 	@Column(name="description")
