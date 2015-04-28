@@ -21,13 +21,12 @@ import com.bill.sys.bean.entity.Dish;
 import com.bill.sys.bean.entity.Order;
 import com.bill.sys.bean.entity.OrderAccountRef;
 import com.bill.sys.bean.entity.OrderItem;
-import com.bill.sys.bean.vos.OrderItemVO;
-import com.bill.sys.bean.vos.OrderVO;
-import com.bill.sys.constants.BusinessConstant;
 import com.bill.sys.service.IDishService;
 import com.bill.sys.service.IFetchMarkService;
 import com.bill.sys.service.IOrderAccountRefService;
 import com.bill.sys.service.IOrderService;
+import com.bill.sys.ui.swing.vos.OrderItemVO;
+import com.bill.sys.ui.swing.vos.OrderVO;
 
 @Service("OrderService")
 public class OrderServiceImpl extends BaseService<Order, Long> implements

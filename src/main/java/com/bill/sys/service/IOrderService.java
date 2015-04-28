@@ -3,8 +3,8 @@ package com.bill.sys.service;
 import java.util.List;
 
 import com.bill.sys.bean.entity.Order;
-import com.bill.sys.bean.vos.OrderItemVO;
-import com.bill.sys.bean.vos.OrderVO;
+import com.bill.sys.ui.swing.vos.OrderItemVO;
+import com.bill.sys.ui.swing.vos.OrderVO;
 
 public interface IOrderService {
 	Order getOrder(Long pk);
