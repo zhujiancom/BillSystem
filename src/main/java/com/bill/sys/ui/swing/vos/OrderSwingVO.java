@@ -6,6 +6,9 @@ package com.bill.sys.ui.swing.vos;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.zj.framework.core.enums.CommonEnums;
+import org.zj.framework.core.enums.CommonEnums.YOrN;
+
 /**
  * @author zj
  * 
@@ -17,10 +20,10 @@ import java.util.Date;
  * 
  *         Create Time: 2015年4月23日 下午11:36:54
  * 
- *         remark (备注):
+ *         remark (备注): swing版本的数据展示vo
  * 
  */
-public class OrderVO {
+public class OrderSwingVO {
 	private Long orderId;
 
 	private String payNo;
@@ -35,29 +38,44 @@ public class OrderVO {
 
 	private Date checkoutTime;
 
-	private BigDecimal posAmount;
+	/* 收银机支付金额*/
+	private BigDecimal cashmachineAmount;
 
+	/* 美团在线支付金额  */
 	private BigDecimal mtAmount;
 
+	/* 大众点评团购在线支付金额  */
 	private BigDecimal dptgAmount;
 
+	@Deprecated
 	private BigDecimal dpshAmount;
 
+	/* 淘点点在线支付金额  */
 	private BigDecimal tddAmount;
 
+	/* 饿了么在线支付金额 */
 	private BigDecimal eleAmount;
-
+	
+	/* 整单实际收入总额  */
 	private BigDecimal totalAmount;
 
-	private BigDecimal freeAmount;
-
+	/* 美团外卖在线支付金额  */
 	private BigDecimal mtwmAmount;
-
-	private Integer unusual;
+	
+	/* 美团外卖活动补贴免单金额 */
+	private BigDecimal mtwmFreeAmount;
+	
+	/* 饿了么活动补贴免单金额  */
+	private BigDecimal eleFreeAmount;
+	
+	/* 正常免单金额 */
+	private BigDecimal freeAmount;
+	
+	private YOrN unusual;
 
 	private BigDecimal nodiscountAmount;
 
-	private Boolean singleDiscount;
+	private CommonEnums.YOrN singleDiscount;
 
 	/**
 	 * @return the orderId
@@ -164,19 +182,13 @@ public class OrderVO {
 		this.checkoutTime = checkoutTime;
 	}
 
-	/**
-	 * @return the posAmount
-	 */
-	public BigDecimal getPosAmount() {
-		return posAmount;
+
+	public BigDecimal getCashmachineAmount() {
+		return cashmachineAmount;
 	}
 
-	/**
-	 * @param posAmount
-	 *            the posAmount to set
-	 */
-	public void setPosAmount(BigDecimal posAmount) {
-		this.posAmount = posAmount;
+	public void setCashmachineAmount(BigDecimal cashmachineAmount) {
+		this.cashmachineAmount = cashmachineAmount;
 	}
 
 	/**
@@ -212,6 +224,7 @@ public class OrderVO {
 	/**
 	 * @return the dpshAmount
 	 */
+	@Deprecated
 	public BigDecimal getDpshAmount() {
 		return dpshAmount;
 	}
@@ -220,6 +233,7 @@ public class OrderVO {
 	 * @param dpshAmount
 	 *            the dpshAmount to set
 	 */
+	@Deprecated
 	public void setDpshAmount(BigDecimal dpshAmount) {
 		this.dpshAmount = dpshAmount;
 	}
@@ -270,21 +284,6 @@ public class OrderVO {
 	}
 
 	/**
-	 * @return the freeAmount
-	 */
-	public BigDecimal getFreeAmount() {
-		return freeAmount;
-	}
-
-	/**
-	 * @param freeAmount
-	 *            the freeAmount to set
-	 */
-	public void setFreeAmount(BigDecimal freeAmount) {
-		this.freeAmount = freeAmount;
-	}
-
-	/**
 	 * @return the mtwmAmount
 	 */
 	public BigDecimal getMtwmAmount() {
@@ -299,18 +298,27 @@ public class OrderVO {
 		this.mtwmAmount = mtwmAmount;
 	}
 
-	/**
-	 * @return the unusual
-	 */
-	public Integer getUnusual() {
+	public BigDecimal getMtwmFreeAmount() {
+		return mtwmFreeAmount;
+	}
+
+	public void setMtwmFreeAmount(BigDecimal mtwmFreeAmount) {
+		this.mtwmFreeAmount = mtwmFreeAmount;
+	}
+
+	public BigDecimal getEleFreeAmount() {
+		return eleFreeAmount;
+	}
+
+	public void setEleFreeAmount(BigDecimal eleFreeAmount) {
+		this.eleFreeAmount = eleFreeAmount;
+	}
+
+	public YOrN getUnusual() {
 		return unusual;
 	}
 
-	/**
-	 * @param unusual
-	 *            the unusual to set
-	 */
-	public void setUnusual(Integer unusual) {
+	public void setUnusual(YOrN unusual) {
 		this.unusual = unusual;
 	}
 
@@ -329,18 +337,19 @@ public class OrderVO {
 		this.nodiscountAmount = nodiscountAmount;
 	}
 
-	/**
-	 * @return the singleDiscount
-	 */
-	public Boolean getSingleDiscount() {
+	public CommonEnums.YOrN getSingleDiscount() {
 		return singleDiscount;
 	}
 
-	/**
-	 * @param singleDiscount
-	 *            the singleDiscount to set
-	 */
-	public void setSingleDiscount(Boolean singleDiscount) {
+	public void setSingleDiscount(CommonEnums.YOrN singleDiscount) {
 		this.singleDiscount = singleDiscount;
+	}
+
+	public BigDecimal getFreeAmount() {
+		return freeAmount;
+	}
+
+	public void setFreeAmount(BigDecimal freeAmount) {
+		this.freeAmount = freeAmount;
 	}
 }

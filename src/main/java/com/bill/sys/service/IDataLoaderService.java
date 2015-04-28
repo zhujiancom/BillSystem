@@ -31,4 +31,18 @@ public interface IDataLoaderService {
 	 * @param order
 	 */
 	void parseOrder(Order order);
+	
+	/**
+	 * 
+	 * Describle(描述)：生成账户流水
+	 *
+	 * 方法名称：generateAccountFlow
+	 *
+	 * 所在类名：IDataLoaderService
+	 *
+	 * Create Time:2015年4月28日 上午10:05:15
+	 *  
+	 * @param orderNo
+	 */
+	void generateAccountFlow(String orderNo);
 }

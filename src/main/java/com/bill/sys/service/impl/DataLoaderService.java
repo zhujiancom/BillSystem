@@ -47,10 +47,15 @@ public class DataLoaderService implements IDataLoaderService {
 				markService.rwUpdateMark(mark);
 			}
 		}
-		//解析订单各种账户收入的金额，判断订单使用的方案
+		
 		for(Order order:orders){
+			//1. 解析订单各种账户收入的金额，判断订单使用的方案
 			parseOrder(order);
+			//2. 生成账户流水
+			generateAccountFlow(order.getOrderNo());
 		}
+		
+		
 	}
 
 	@Override
@@ -58,6 +63,11 @@ public class DataLoaderService implements IDataLoaderService {
 		FilterChain chain = new FilterChain();
 		chain.addFilters(filters);
 		chain.doFilter(order, chain);
+	}
+	
+	@Override
+	public void generateAccountFlow(String orderNo){
+		
 	}
 	
 

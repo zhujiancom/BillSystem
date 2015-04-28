@@ -20,7 +20,7 @@ import java.util.Date;
  *         remark (备注):
  * 
  */
-public class OrderItemVO {
+public class OrderItemSwingVO {
 	private String dishName;
 
 	/* 折扣率 */
