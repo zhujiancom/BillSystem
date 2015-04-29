@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 
 /**
  * @author zj

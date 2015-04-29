@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 import org.zj.framework.core.enums.BusinessEnums.DataGenerateType;
 import org.zj.framework.core.enums.BusinessEnums.FlowType;
 import org.zj.framework.core.enums.CommonEnums.YOrN;

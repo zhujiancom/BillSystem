@@ -25,4 +25,8 @@ public interface IAccountService {
 	Account getAccount(Long id);
 	
 	void rwUpdateAccount(Account account);
+	
+	void rwCreateAccount(Account account);
+	
+	void rwCreateAccount(Account[] accounts);
 }

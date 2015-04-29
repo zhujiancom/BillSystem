@@ -9,7 +9,6 @@
 							http://www.springframework.org/schema/context/spring-context-4.0.xsd
 							http://www.springframework.org/schema/tx 
 							http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-	<context:component-scan base-package="com.zj.frypan,org.zj.framework" />
 	<!-- 载入properties配置文件 -->
 	<bean id="envConfig"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">

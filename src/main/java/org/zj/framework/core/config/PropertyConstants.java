@@ -13,6 +13,8 @@ public class PropertyConstants{
 	private PropertyConstants() {}
 
 	public static final String TIMER_ENABLED = "framework.timer.enabled";
+	public static final String DB_SCHEMA_MYSQL="framework.schema.mysql";
+	public static final String DB_SCHEMA_ORACLE="framework.schema.oracle";
 	public static final String LOCALE = "framework.locale";
 	public static final String MESSAGE_RESOURCES="framework.i18n.resources";
 	public static final String PROPERTY_RESOURCES="framework.properties.resources";
@@ -29,6 +31,7 @@ public class PropertyConstants{
 	public static final String DEFAULT_PAGESIZE="framework.global.pagination.default_pagesize";
 	
 	public static final String SYSNAME = "system.name";
+	
 	/*
 	 * 账户
 	 */

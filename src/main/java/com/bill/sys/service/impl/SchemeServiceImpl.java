@@ -36,4 +36,13 @@ public class SchemeServiceImpl extends BaseService<Scheme, Long> implements
 		return scheme;
 	}
 
+	@Override
+	public void rwCreateScheme(Scheme scheme) {
+		super.rwCreate(scheme);
+	}
+
+	@Override
+	public void rwCreateScheme(Scheme[] schemes) {
+		super.rwCreate(schemes);
+	}
 }

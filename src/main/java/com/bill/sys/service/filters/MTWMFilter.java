@@ -69,7 +69,7 @@ public class MTWMFilter extends AbstractFilter {
 		}
 		if(actualAmount.compareTo(onlineAmount) != 0){
 			order.setUnusual(YOrN.Y);
-			logger.warn("--- 【"+order.getPayNo()+"】[美团外卖支付异常] ---， 在线支付金额："+onlineAmount+" , 实际支付金额： "+actualAmount);
+			logger.warn("--- 【"+order.getPayNo()+"】[美团外卖支付异常] ---， 在线支付金额："+onlineAmount+" , 实际应支付金额： "+actualAmount);
 		}
 		order.setSchemeName(schemeName);
 		//保存饿了么在线支付金额

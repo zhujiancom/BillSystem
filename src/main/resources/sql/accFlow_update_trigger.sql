@@ -1,6 +1,6 @@
 DELIMITER $$
 
-USE `reconciliation2`$$
+USE `billsystem`$$
 
 DROP TRIGGER /*!50032 IF EXISTS */ `accflow_update_trigger`$$
 
@@ -10,7 +10,7 @@ CREATE
     FOR EACH ROW BEGIN
 	DECLARE diffAmount DECIMAL(19,2);
 	SET diffAmount = new.amount-old.amount;
-	UPDATE `reconciliation2`.`bus_tb_account`  SET earning_amount=earning_amount+diffAmount,balance=balance+diffAmount WHERE accId=old.acc_id;
+	UPDATE `billsystem`.`bus_tb_account`  SET earning_amount=earning_amount+diffAmount,balance=balance+diffAmount WHERE accId=old.acc_id;
     END;
 $$
 

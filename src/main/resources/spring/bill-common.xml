@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context-4.0.xsd
+							http://www.springframework.org/schema/tx 
+							http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+							http://www.springframework.org/schema/util
+							http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	<util:list id="filters" list-class="java.util.LinkedList" value-type="com.bill.sys.service.filters.CalculateFilter">
+		<bean class="com.bill.sys.service.filters.CashFilter"></bean>
+		<bean class="com.bill.sys.service.filters.DPTGFilter"></bean>
+		<bean class="com.bill.sys.service.filters.MTFilter"></bean>
+		<bean class="com.bill.sys.service.filters.ELEFilter"></bean>
+		<bean class="com.bill.sys.service.filters.TDDFilter"></bean>
+		<bean class="com.bill.sys.service.filters.MTWMFilter"></bean>
+		<bean class="com.bill.sys.service.filters.FreeFilter"></bean>
+	</util:list>
+</beans>

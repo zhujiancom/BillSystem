@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 添加一常量，将action交予spring处理 -->
+	<!--<constant name="struts.objectFactory" value="spring"></constant> -->
+
+	<!-- 指定web应用的默认编码集,相当于调用HttpServletRequest的setCharacterEncoding方法 -->
+	<!--<constant name="struts.i18n.encoding" value="UTF-8" />-->
+
+	<!-- 设置浏览器是否缓存静态内容，默认值为true（生产环境下使用）,开发阶段关闭 -->
+	<!--<constant name="struts.serve.static.browserCache" value="false" /> -->
+
+	<!-- 当struts的配置文件修改后，系统是否自动重新加载该文件，默认值为false(生产环境下使用),开发阶段最好打开-->
+	<!--<constant name="struts.configuration.xml.reload" value="true" /> -->
+
+	<!--开发模式下使用，这样可以打印出更详细的错误信息-->
+	<!--<constant name="struts.devMode" value="true" />-->
+	<!-- 访问静态变量 -->
+	<!-- <constant name="struts.ognl.allowStaticMethodAccess" value="true"/> --> 
+
+<!-- 	<package name="common" extends="json-default"> -->
+<!-- 		<interceptors> -->
+<!-- 			<interceptor name="configdebug" class="com.configdebug.interceptor.ConfigDebugInterceptor"> -->
+<!-- 				<param name="configFileLocation">/configdebug.properties</param> -->
+<!-- 			</interceptor> -->
+<!-- 			<interceptor-stack name="myStack"> -->
+<!-- 				<interceptor-ref name="configdebug"/> -->
+<!-- 				<interceptor-ref name="defaultStack"/> -->
+<!-- 			</interceptor-stack> -->
+<!-- 		</interceptors> -->
+<!-- 		<default-interceptor-ref name="myStack"></default-interceptor-ref> -->
+		
+<!-- 	</package> -->
+	
+</struts>

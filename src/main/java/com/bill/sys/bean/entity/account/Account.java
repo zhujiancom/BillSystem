@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 import org.zj.framework.core.enums.CommonEnums;
 
 /**
@@ -76,6 +76,15 @@ public class Account extends BaseEntity {
 	
 	/* 是否父账户 */
 	private CommonEnums.YOrN isParent;
+	
+	public Account(){}
+	
+	public Account(String name,String accNo,String accType){
+		this.accNo = accNo;
+		this.accType = accType;
+		this.accName = name;
+		this.currency = "RMB";
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator

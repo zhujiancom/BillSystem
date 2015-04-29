@@ -49,4 +49,13 @@ public class AccountServiceImpl extends BaseService<Account, Long> implements IA
 		super.rwUpdate(account);
 	}
 
+	@Override
+	public void rwCreateAccount(Account account) {
+		super.rwCreate(account);
+	}
+
+	@Override
+	public void rwCreateAccount(Account[] accounts) {
+		super.rwCreate(accounts);
+	}
 }

@@ -38,16 +38,6 @@
 <!-- 		</property> -->
 	</bean>
 	
-	<util:list id="filters" list-class="java.util.LinkedList" value-type="com.bill.sys.service.filters.CalculateFilter">
-		<bean class="com.bill.sys.service.filters.CashFilter"></bean>
-		<bean class="com.bill.sys.service.filters.DPTGFilter"></bean>
-		<bean class="com.bill.sys.service.filters.MTFilter"></bean>
-		<bean class="com.bill.sys.service.filters.ELEFilter"></bean>
-		<bean class="com.bill.sys.service.filters.TDDFilter"></bean>
-		<bean class="com.bill.sys.service.filters.MTWMFilter"></bean>
-		<bean class="com.bill.sys.service.filters.FreeFilter"></bean>
-	</util:list>
-	
 	<bean id="MD5Aspect" class="org.zj.framework.core.aspect.MD5Aspect" scope="prototype"></bean>
 	
 	<bean id="springcontext" class="org.zj.framework.tools.SpringUtils"></bean>
