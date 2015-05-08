@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Time News Roman", Arial;
+  font-size: 12px;
+  text-align: center;
+}
+.menu_block {
+  width: 155px;
+  height: 55px;
+  cursor: pointer;
+  background-color: #000000;
+  font-size: 18px;
+  line-height: 55px;
+  text-align: center;
+  color: white;
+  font-weight: blod;
+}
+.header {
+  margin: 0 auto;
+}
+@media screen {
+  .nav ul {
+    width: 800px;
+    height: 55px;
+    margin: 0 auto;
+  }
+  .nav li {
+    float: left;
+    list-style: none;
+    width: 155px;
+    height: 55px;
+    cursor: pointer;
+    background-color: #000000;
+    font-size: 18px;
+    line-height: 55px;
+    text-align: center;
+    color: white;
+    font-weight: blod;
+  }
+  .nav li:hover {
+    background-color: #a0a0a0;
+  }
+  .nav li:first-child {
+    background-color: #00cc00;
+  }
+  .nav li.selected {
+    background-color: #00cc00;
+  }
+  .nav li.unselected {
+    background-color: #000000;
+  }
+}
+/*# sourceMappingURL=demo.css.map */

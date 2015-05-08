@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>菜单导航</title>
+<link rel="stylesheet" media="screen" href="../css/demo.css">
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#nav li").click(function(){
+			var _this = $(this);
+			$.each($("#nav li"),function(index,value){
+				if($(this).hasClass("selected") || index ==0){
+					$(this).addClass("unselected");
+				}
+			});
+			_this.addClass("selected").removeClass("unselected");
+		});
+	});
+</script>
+<style>
+	
+</style>
+</head>
+<body>
+	<div id="header" class="header">
+		<div id="nav" class="nav">
+			<ul>
+				<li>首页</li>
+				<li>记账</li>
+				<li>账户</li>
+				<li>设置</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
