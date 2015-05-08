@@ -100,10 +100,18 @@ public abstract class AbstractFilter implements CalculateFilter {
 	}
 	
 	/**
-	 * 反推计算使用了什么样的代金券
 	 * 
+	 * Describle(描述)：反推计算使用了什么样的代金券
+	 *
+	 * 方法名称：createSchemes
+	 *
+	 * 所在类名：AbstractFilter
+	 *
+	 * Create Time:2015年4月28日 下午2:14:20
+	 *  
 	 * @param amount
 	 * @param paymodeno
+	 * @param suitFlag
 	 * @return
 	 */
 	protected Map<SchemeType,SchemeWrapper> createSchemes(BigDecimal amount, String paymodeno,boolean suitFlag) {

@@ -19,5 +19,6 @@
 		<bean class="com.bill.sys.service.filters.TDDFilter"></bean>
 		<bean class="com.bill.sys.service.filters.MTWMFilter"></bean>
 		<bean class="com.bill.sys.service.filters.FreeFilter"></bean>
+		<bean class="com.bill.sys.service.filters.MTSuperFilter"></bean>
 	</util:list>
 </beans>

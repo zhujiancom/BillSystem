@@ -38,6 +38,8 @@ public class CleanListener implements ActionListener {
 	private JLabel tddValue;
 	private JLabel mtwmValue;
 	private JLabel mtwmFreeValue;
+	private JLabel mtSuperValue;
+	private JLabel mtSuperFreeValue;
 	private JLabel freeValue;
 	private JLabel totalValue;
 	
@@ -79,6 +81,8 @@ public class CleanListener implements ActionListener {
 			tddValue.setText(BigDecimal.ZERO.toString());
 			mtwmValue.setText(BigDecimal.ZERO.toString());
 			mtwmFreeValue.setText(BigDecimal.ZERO.toString());
+			mtSuperValue.setText(BigDecimal.ZERO.toString());
+			mtSuperFreeValue.setText(BigDecimal.ZERO.toString());
 			freeValue.setText(BigDecimal.ZERO.toString());
 			totalValue.setText(BigDecimal.ZERO.toString());
 		}catch(ServiceException se){
@@ -132,6 +136,20 @@ public class CleanListener implements ActionListener {
 
 	public void setTotalValue(JLabel totalValue) {
 		this.totalValue = totalValue;
+	}
+
+	/**
+	 * @param mtSuperValue the mtSuperValue to set
+	 */
+	public void setMtSuperValue(JLabel mtSuperValue) {
+		this.mtSuperValue = mtSuperValue;
+	}
+
+	/**
+	 * @param mtSuperFreeValue the mtSuperFreeValue to set
+	 */
+	public void setMtSuperFreeValue(JLabel mtSuperFreeValue) {
+		this.mtSuperFreeValue = mtSuperFreeValue;
 	}
 
 }

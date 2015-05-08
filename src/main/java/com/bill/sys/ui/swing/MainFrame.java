@@ -56,6 +56,8 @@ public class MainFrame extends JFrame {
 	private JLabel tddValue;
 	private JLabel mtwmValue;
 	private JLabel mtwmFreeValue;
+	private JLabel mtSuperValue;
+	private JLabel mtSuperFreeValue;
 	private JLabel freeValue;
 	private JLabel totalValue;
 	
@@ -71,6 +73,8 @@ public class MainFrame extends JFrame {
 		listener.setTgValue(tgValue);
 		listener.setMtwmValue(mtwmValue);
 		listener.setMtwmFreeValue(mtwmFreeValue);
+		listener.setMtSuperValue(mtSuperValue);
+		listener.setMtSuperFreeValue(mtSuperFreeValue);
 		listener.setFreeValue(freeValue);
 		listener.setTotalValue(totalValue);
 		queryBtn.registerKeyboardAction(listener, KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0), JComponent.WHEN_IN_FOCUSED_WINDOW);
@@ -86,6 +90,8 @@ public class MainFrame extends JFrame {
 		clistener.setTgValue(tgValue);
 		clistener.setMtwmValue(mtwmValue);
 		clistener.setMtwmFreeValue(mtwmFreeValue);
+		clistener.setMtSuperValue(mtSuperValue);
+		clistener.setMtSuperFreeValue(mtSuperFreeValue);
 		clistener.setFreeValue(freeValue);
 		clistener.setTotalValue(totalValue);
 		cleanBtn.addActionListener(clistener);
@@ -159,7 +165,7 @@ public class MainFrame extends JFrame {
 		
 		JPanel conclusionPanel = new JPanel();
 		containerPanel.add(conclusionPanel, BorderLayout.SOUTH);
-		conclusionPanel.setLayout(new GridLayout(11, 1));
+		conclusionPanel.setLayout(new GridLayout(13, 1));
 		
 		JLabel pos = new JLabel("收银机入账总额：");
 		posValue = new JLabel();
@@ -217,6 +223,20 @@ public class MainFrame extends JFrame {
 		mtwmFreePanel.add(mtwmFreeLabel);
 		mtwmFreePanel.add(mtwmFreeValue);
 		
+		JLabel mtSuperLabel = new JLabel("美团超级代金券支付金额：");
+		mtSuperValue = new JLabel();
+		mtSuperValue.setForeground(Color.RED);
+		JPanel mtSuperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		mtSuperPanel.add(mtSuperLabel);
+		mtSuperPanel.add(mtSuperValue);
+		
+		JLabel mtSuperFreeLabel = new JLabel("美团超级代金券补贴金额：");
+		mtSuperFreeValue = new JLabel();
+		mtSuperFreeValue.setForeground(Color.RED);
+		JPanel mtSuperFreePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		mtSuperFreePanel.add(mtSuperFreeLabel);
+		mtSuperFreePanel.add(mtSuperFreeValue);
+		
 		JLabel freeLabel = new JLabel("总免单金额：");
 		freeValue = new JLabel();
 		freeValue.setForeground(Color.RED);
@@ -238,6 +258,8 @@ public class MainFrame extends JFrame {
 		conclusionPanel.add(eleFreePanel);
 		conclusionPanel.add(mtwmPanel);
 		conclusionPanel.add(mtwmFreePanel);
+		conclusionPanel.add(mtSuperPanel);
+		conclusionPanel.add(mtSuperFreePanel);
 		conclusionPanel.add(tddPanel);
 		conclusionPanel.add(freePanel);
 		conclusionPanel.add(totalPanel);

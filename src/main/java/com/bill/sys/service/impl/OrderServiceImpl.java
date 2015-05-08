@@ -32,11 +32,11 @@ import com.bill.sys.ui.swing.vos.OrderSwingVO;
 public class OrderServiceImpl extends BaseService<Order, Long> implements
 		IOrderService {
 	@Autowired
-	protected Mapper beanMapper;
+	private Mapper beanMapper;
 	@Resource(name="OrderAccountRefService")
-	protected IOrderAccountRefService oaService;
+	private IOrderAccountRefService oaService;
 	@Resource(name="DishService")
-	protected IDishService dishService;
+	private IDishService dishService;
 
 	@Override
 	public Order getOrder(Long pk) {
@@ -99,6 +99,7 @@ public class OrderServiceImpl extends BaseService<Order, Long> implements
 				BigDecimal totalAmount = BigDecimal.ZERO;
 				for (OrderAccountRef accountRef : oaRefs) {
 					BigDecimal amount = accountRef.getRealAmount();
+					totalAmount = totalAmount.add(amount);
 					String accountNo = accountRef.getAccNo();
 					if (BusinessConstant.CASHMACHINE_ACC.equals(accountNo)) {
 						vo.setCashmachineAmount(amount);
@@ -124,9 +125,15 @@ public class OrderServiceImpl extends BaseService<Order, Long> implements
 					if (BusinessConstant.FREE_MTWM_ACC.equals(accountNo)) {
 						vo.setMtwmFreeAmount(amount);
 					}
-					totalAmount = totalAmount.add(amount);
+					if (BusinessConstant.MT_SUPER_ACC.equals(accountNo)){
+						vo.setMtSuperAmount(amount);
+					}
+					if (BusinessConstant.FREE_MT_SUPER_ACC.equals(accountNo)){
+						vo.setMtSuperFreeAmount(amount);
+					}
 					if (BusinessConstant.FREE_ACC.equals(accountNo)) {
 						vo.setFreeAmount(amount);
+						totalAmount = totalAmount.subtract(amount);
 					}
 				}
 				vo.setSchemeName(order.getSchemeName());

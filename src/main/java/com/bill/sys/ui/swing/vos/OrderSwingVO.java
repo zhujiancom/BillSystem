@@ -71,6 +71,11 @@ public class OrderSwingVO {
 	/* 正常免单金额 */
 	private BigDecimal freeAmount;
 	
+	/* 美团超级代金券金额*/
+	private BigDecimal mtSuperAmount;
+	
+	private BigDecimal mtSuperFreeAmount;
+	
 	private YOrN unusual;
 
 	private BigDecimal nodiscountAmount;
@@ -351,5 +356,21 @@ public class OrderSwingVO {
 
 	public void setFreeAmount(BigDecimal freeAmount) {
 		this.freeAmount = freeAmount;
+	}
+
+	public BigDecimal getMtSuperAmount() {
+		return mtSuperAmount;
+	}
+
+	public void setMtSuperAmount(BigDecimal mtSuperAmount) {
+		this.mtSuperAmount = mtSuperAmount;
+	}
+
+	public BigDecimal getMtSuperFreeAmount() {
+		return mtSuperFreeAmount;
+	}
+
+	public void setMtSuperFreeAmount(BigDecimal mtSuperFreeAmount) {
+		this.mtSuperFreeAmount = mtSuperFreeAmount;
 	}
 }

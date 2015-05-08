@@ -68,17 +68,17 @@ public class MTFilter extends AbstractFilter {
 				BigDecimal rate = DigitUtil.precentDown(singleRate);
 				BigDecimal originTotalAmount = DigitUtil.mutiplyDown(DigitUtil.mutiplyDown(singlePrice, count.subtract(countBack)),rate);
 
+				/* 判断是否有单品折扣  */
+				if((order.getSingleDiscount() == null || YOrN.N.equals(order.getSingleDiscount())) && isSingleDiscount(singleRate)){
+					order.setSingleDiscount(YOrN.Y);
+				}
+				
 				if (isNodiscount(dishNo)) {
 					// 3. 饮料酒水除外
 					nodiscountAmount = nodiscountAmount.add(originTotalAmount);
 					continue;
 				}
 				bediscountAmount = bediscountAmount.add(originTotalAmount);
-				
-				/* 判断是否有单品折扣  */
-				if((order.getSingleDiscount() == null || YOrN.N.equals(order.getSingleDiscount())) && isSingleDiscount(singleRate)){
-					order.setSingleDiscount(YOrN.Y);
-				}
 			}
 			
 			//将套餐中的饮料从不可打折金额中除去
@@ -118,9 +118,8 @@ public class MTFilter extends AbstractFilter {
 					if(StringUtils.hasText(schemeName)){
 						schemeName = schemeName+","+wrapper.getName();
 					}else{
-						
-					}schemeName = wrapper.getName();
-					
+						schemeName = wrapper.getName();
+					}
 					postAmount = postAmount.add(calculateTG(wrapper.getScheme(), wrapper.getCount()));
 				}
 				order.setSchemeName(schemeName);

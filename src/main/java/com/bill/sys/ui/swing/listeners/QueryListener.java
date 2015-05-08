@@ -49,6 +49,8 @@ public class QueryListener implements ActionListener,ListSelectionListener {
 	private JLabel mtwmValue;
 	private JLabel mtwmFreeValue;
 	private JLabel freeValue;
+	private JLabel mtSuperValue;
+	private JLabel mtSuperFreeValue;
 	private JLabel totalValue;
 	
 	public QueryListener(JTable mainTable,JTable subTable){
@@ -71,6 +73,8 @@ public class QueryListener implements ActionListener,ListSelectionListener {
 			tddValue.setText(getTotalAmount(BusinessConstant.TDD_ACC).toString());
 			mtwmValue.setText(getTotalAmount(BusinessConstant.MTWM_ACC).toString());
 			mtwmFreeValue.setText(getTotalAmount(BusinessConstant.FREE_MTWM_ACC).toString());
+			mtSuperValue.setText(getTotalAmount(BusinessConstant.MT_SUPER_ACC).toString());
+			mtSuperFreeValue.setText(getTotalAmount(BusinessConstant.FREE_MT_SUPER_ACC).toString());
 			freeValue.setText(getTotalAmount(BusinessConstant.FREE_ACC).toString());
 			totalValue.setText(getTotalDayAmount().toString());
 			mainTable.getSelectionModel().addListSelectionListener(this);
@@ -248,6 +252,21 @@ public class QueryListener implements ActionListener,ListSelectionListener {
 				}
 			}
 		}
+		if(BusinessConstant.MT_SUPER_ACC.equals(accountNo)){
+			for(OrderSwingVO order:orders){
+				if(order.getMtSuperAmount() != null){
+					totalAmount = totalAmount.add(order.getMtSuperAmount());
+				}
+			}
+		}
+		if(BusinessConstant.FREE_MT_SUPER_ACC.equals(accountNo)){
+			for(OrderSwingVO order:orders){
+				if(order.getMtSuperFreeAmount() != null){
+					totalAmount = totalAmount.add(order.getMtSuperFreeAmount());
+				}
+			}
+		}
+		
 		return totalAmount;
 	}
 
@@ -289,5 +308,19 @@ public class QueryListener implements ActionListener,ListSelectionListener {
 
 	public void setTotalValue(JLabel totalValue) {
 		this.totalValue = totalValue;
+	}
+
+	/**
+	 * @param mtSuperValue the mtSuperValue to set
+	 */
+	public void setMtSuperValue(JLabel mtSuperValue) {
+		this.mtSuperValue = mtSuperValue;
+	}
+
+	/**
+	 * @param mtSuperFreeValue the mtSuperFreeValue to set
+	 */
+	public void setMtSuperFreeValue(JLabel mtSuperFreeValue) {
+		this.mtSuperFreeValue = mtSuperFreeValue;
 	}
 }

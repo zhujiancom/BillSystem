@@ -5,6 +5,7 @@ package com.bill.sys.service.impl;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Service;
 import org.zj.framework.core.enums.BusinessEnums.SchemeType;
 import org.zj.framework.core.service.BaseService;
 
@@ -25,6 +26,7 @@ import com.bill.sys.service.ISchemeService;
  * remark (备注):
  *
  */
+@Service("SchemeService")
 public class SchemeServiceImpl extends BaseService<Scheme, Long> implements
 		ISchemeService {
 

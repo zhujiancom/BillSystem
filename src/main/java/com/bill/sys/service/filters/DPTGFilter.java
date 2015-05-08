@@ -77,6 +77,12 @@ public class DPTGFilter extends AbstractFilter {
 			BigDecimal singleRate = item.getDiscountRate();
 			BigDecimal rate = DigitUtil.precentDown(singleRate);
 			BigDecimal originTotalAmount = DigitUtil.mutiplyDown(DigitUtil.mutiplyDown(singlePrice, count.subtract(countBack)),rate);
+			
+			/* 判断是否有单品折扣  */
+			if((order.getSingleDiscount() == null || YOrN.N.equals(order.getSingleDiscount())) && isSingleDiscount(singleRate)){
+				order.setSingleDiscount(YOrN.Y);
+			}
+			
 			if (isNodiscount(dishNo)) {
 				// 3. 饮料酒水除外
 				nodiscountAmount = nodiscountAmount.add(originTotalAmount);
@@ -84,10 +90,6 @@ public class DPTGFilter extends AbstractFilter {
 			}
 			bediscountAmount = bediscountAmount.add(originTotalAmount);
 			
-			/* 判断是否有单品折扣  */
-			if((order.getSingleDiscount() == null || YOrN.N.equals(order.getSingleDiscount())) && isSingleDiscount(singleRate)){
-				order.setSingleDiscount(YOrN.Y);
-			}
 		}
 		//将套餐中的饮料从不可打折金额中除去
 		Integer suitACount = suitMap.get(SchemeType.SUIT_32);

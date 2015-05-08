@@ -14,6 +14,7 @@ import org.zj.framework.core.enums.BusinessEnums.SchemeType;
 import org.zj.framework.core.enums.CommonEnums.YOrN;
 import org.zj.framework.tools.DigitUtil;
 import org.zj.framework.tools.StringUtils;
+import org.zj.framework.tools.properties.PropertyUtils;
 
 import com.bill.sys.bean.entity.Order;
 import com.bill.sys.bean.entity.OrderItem;
@@ -28,7 +29,9 @@ import com.bill.sys.constants.BusinessConstant;
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class MTWMFilter extends AbstractFilter {
 	private static final Log logger = LogFactory.getLog(MTWMFilter.class);
-
+	private static final BigDecimal BASE_FREE_AMOUNT=PropertyUtils.getBigDecimalValue("mtwm.base.free.amount");
+	private static final BigDecimal FREE_AMOUNT=PropertyUtils.getBigDecimalValue("mtwm.free.amount");
+	
 	@Override
 	public boolean support(Map<String, BigDecimal> paymodeMapping) {
 		return paymodeMapping.containsKey(BusinessConstant.PAYMODE_MTWM);
@@ -59,6 +62,10 @@ public class MTWMFilter extends AbstractFilter {
 		}
 		if(freeAmount != null){
 			actualAmount = actualAmount.subtract(freeAmount);
+			BigDecimal cutAmount = freeAmount.remainder(new BigDecimal("15"));
+			if(cutAmount.compareTo(BASE_FREE_AMOUNT) >= 0){
+				freeAmount = freeAmount.subtract(FREE_AMOUNT);
+			}
 			schemeName = schemeName+","+"美团外卖活动补贴"+freeAmount+"元";
 			Map<FreeType,BigDecimal> freeMap = chain.getFreeMap();
 			if(freeMap.get(FreeType.MTWM) == null){
