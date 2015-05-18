@@ -41,9 +41,6 @@ body {
   .nav li:hover {
     background-color: #a0a0a0;
   }
-  .nav li:first-child {
-    background-color: #00cc00;
-  }
   .nav li.selected {
     background-color: #00cc00;
   }
@@ -51,4 +48,4 @@ body {
     background-color: #000000;
   }
 }
-/*# sourceMappingURL=demo.css.map */
+/*# sourceMappingURL=menu.css.map */

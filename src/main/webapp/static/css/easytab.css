@@ -1,0 +1,9 @@
+.tab-box {
+  -webkit-border-radius: 2em 2em 0 0;
+  -moz-border-radius: 2em 2em 0 0;
+  border_radius: 2em 2em 0 0;
+  width: 1005px;
+  height: 55px;
+  box-shadow: 1px 1px blur 1px #e5e8eb;
+}
+/*# sourceMappingURL=easytab.css.map */

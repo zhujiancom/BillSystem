@@ -1,0 +1,28 @@
+.tab-box {
+  -webkit-border-radius: 0.5em 0.5em 0 0;
+  -moz-border-radius: 0.5em 0.5em 0 0;
+  border-radius: 0.5em 0.5em 0 0;
+  width: 1005px;
+  height: 155px;
+  border: solid 1px #bfc4ca;
+  -webkit-box-shadow: 1px 1px 1px #cac9d3;
+  -moz-box-shadow: 1px 1px 1px #cac9d3;
+  box-shadow: 1px 1px 1px #cac9d3;
+}
+.etabs {
+  margin: 0;
+  padding: 0;
+}
+.tab {
+  list-style: none;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  background: #eee;
+  border: solid 1px #999;
+  border-bottom: none;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+/*# sourceMappingURL=mytab.css.map */

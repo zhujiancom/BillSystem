@@ -2,34 +2,70 @@
 <html>
 <head>
 <title>菜单导航</title>
-<link rel="stylesheet" media="screen" href="../css/demo.css">
+<link rel="stylesheet" media="screen" href="../css/menu.css">
+<link rel="stylesheet" media="screen" href="../js/plugins/easytab/easytab.css">
+<link rel="stylesheet" media="screen" href="../js/plugins/jquery-ui/jquery-ui.theme.css">
 <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/plugins/easytab/jquery.easytabs.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#nav li").click(function(){
 			var _this = $(this);
 			$.each($("#nav li"),function(index,value){
-				if($(this).hasClass("selected") || index ==0){
-					$(this).addClass("unselected");
+				if($(this).hasClass("selected")){
+					$(this).removeAttr("class");
 				}
 			});
 			_this.addClass("selected").removeClass("unselected");
 		});
+// 		$("#tabs").tabs();
+		$('#tabs').easytabs({defaultTab: "li:first-child"});
+		$('#income').bind('easytabs:ajax:complete',function(){
+			alert("income");
+		});
+		$('#charge').bind('easytabs:ajax:complete',function(){
+			alert("charge");
+		});
 	});
 </script>
 <style>
-	
+	#container{
+		width:1200px;
+		margin:20px auto;
+		padding:0;
+	}
 </style>
 </head>
 <body>
 	<div id="header" class="header">
 		<div id="nav" class="nav">
 			<ul>
-				<li>首页</li>
+				<li class="selected">首页</li>
 				<li>记账</li>
 				<li>账户</li>
 				<li>设置</li>
 			</ul>
+		</div>
+	</div>
+	<div id="container">
+		<div id="tabs" class="tab-box">
+		  <ul class='etabs'>
+		    <li class='tab'><a href="#tabs1-html" >支出</a></li>
+		    <li class='tab'><a id="income" href="test.action" data-target="#tabs1-js">收入</a></li>
+		    <li class='tab'><a id="charge" href="test2.action" data-target="#tabs1-css">转账</a></li>
+		    <li class='tab'><a href="#tabs1-css">设置</a></li>
+		  </ul>
+		  <div class='panel-container'>
+				<div id="tabs1-html">
+					<h2>HTML Markup for these tabs</h2>
+				</div>
+				<div id="tabs1-js">
+				   <h2>JS for these tabs</h2>
+				</div>
+				<div id="tabs1-css">
+		   			<h2>CSS Styles for these tabs</h2>
+		   		</div>
+	   		</div>
 		</div>
 	</div>
 </body>
