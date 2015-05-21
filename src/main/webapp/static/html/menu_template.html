@@ -3,10 +3,12 @@
 <head>
 <title>菜单导航</title>
 <link rel="stylesheet" media="screen" href="../css/menu.css">
-<link rel="stylesheet" media="screen" href="../js/plugins/easytab/easytab.css">
-<link rel="stylesheet" media="screen" href="../js/plugins/jquery-ui/jquery-ui.theme.css">
+<link rel="stylesheet" media="screen" href="../js/plugins/easytab/css/easytab.css">
+<link rel="stylesheet" type="text/css" href="../js/jeasyUI/themes/gray/easyui.css">
+<link rel="stylesheet" type="text/css" href="../js/jeasyUI/themes/icon.css">
 <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
 <script type="text/javascript" src="../js/plugins/easytab/jquery.easytabs.js"></script>
+<script type="text/javascript" src="../js/jeasyUI/jquery.easyui.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#nav li").click(function(){
@@ -20,12 +22,12 @@
 		});
 // 		$("#tabs").tabs();
 		$('#tabs').easytabs({defaultTab: "li:first-child"});
-		$('#income').bind('easytabs:ajax:complete',function(){
-			alert("income");
-		});
-		$('#charge').bind('easytabs:ajax:complete',function(){
-			alert("charge");
-		});
+// 		$('#income').bind('easytabs:ajax:complete',function(){
+// 			alert("income");
+// 		});
+// 		$('#charge').bind('easytabs:ajax:complete',function(){
+// 			alert("charge");
+// 		});
 	});
 </script>
 <style>
@@ -34,35 +36,50 @@
 		margin:20px auto;
 		padding:0;
 	}
+	.img-box{
+		float:left;
+		margin:10px;
+	}
+	.img-show{
+		width:130px;
+		height:94px;
+	}
 </style>
 </head>
 <body>
 	<div id="header" class="header">
 		<div id="nav" class="nav">
 			<ul>
-				<li class="selected">首页</li>
-				<li>记账</li>
-				<li>账户</li>
-				<li>设置</li>
+				<li class="selected">aaa</li>
+				<li>bbb</li>
+				<li>ccc</li>
+				<li>ddd</li>
 			</ul>
 		</div>
 	</div>
 	<div id="container">
 		<div id="tabs" class="tab-box">
 		  <ul class='etabs'>
-		    <li class='tab'><a href="#tabs1-html" >支出</a></li>
-		    <li class='tab'><a id="income" href="test.action" data-target="#tabs1-js">收入</a></li>
-		    <li class='tab'><a id="charge" href="test2.action" data-target="#tabs1-css">转账</a></li>
-		    <li class='tab'><a href="#tabs1-css">设置</a></li>
+		    <li class='tab'><a href="#income" >aaa</a></li>
+		    <li class='tab'><a href="#expense">bbb</a></li>
+		    <li class='tab'><a href="#switch">ccc</a></li>
 		  </ul>
 		  <div class='panel-container'>
-				<div id="tabs1-html">
-					<h2>HTML Markup for these tabs</h2>
+				<div id="income">
+					<div id="tb-img" class="img-box">
+						<img class="img-show" src="../images/default-img.gif"/>
+					</div>
+					<select class="easyui-combobox" name="state" style="width:200px;">
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+					</select>
 				</div>
-				<div id="tabs1-js">
+				<div id="expense">
 				   <h2>JS for these tabs</h2>
 				</div>
-				<div id="tabs1-css">
+				<div id="switch">
 		   			<h2>CSS Styles for these tabs</h2>
 		   		</div>
 	   		</div>
