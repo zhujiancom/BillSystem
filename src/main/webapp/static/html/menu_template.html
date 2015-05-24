@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>菜单导航</title>
+<link rel="stylesheet" media="screen" href="../css/reset.css">
 <link rel="stylesheet" media="screen" href="../css/menu.css">
 <link rel="stylesheet" media="screen" href="../js/plugins/easytab/css/easytab.css">
 <link rel="stylesheet" type="text/css" href="../js/jeasyUI/themes/gray/easyui.css">
@@ -32,7 +33,7 @@
 </script>
 <style>
 	#container{
-		width:1200px;
+		width:80%;
 		margin:20px auto;
 		padding:0;
 	}
@@ -47,42 +48,40 @@
 </style>
 </head>
 <body>
-	<div id="header" class="header">
-		<div id="nav" class="nav">
-			<ul>
-				<li class="selected">aaa</li>
-				<li>bbb</li>
-				<li>ccc</li>
-				<li>ddd</li>
-			</ul>
+	<div class="wrapper">
+		<div id="header" class="header">
+			<div id="nav" class="nav">
+				<ul>
+					<li class="selected">首页</li>
+					<li>记账</li>
+					<li>账户</li>
+					<li>设置</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-	<div id="container">
-		<div id="tabs" class="tab-box">
-		  <ul class='etabs'>
-		    <li class='tab'><a href="#income" >aaa</a></li>
-		    <li class='tab'><a href="#expense">bbb</a></li>
-		    <li class='tab'><a href="#switch">ccc</a></li>
-		  </ul>
-		  <div class='panel-container'>
-				<div id="income">
-					<div id="tb-img" class="img-box">
-						<img class="img-show" src="../images/default-img.gif"/>
+		<div id="container">
+			<div id="tabs" class="tab-box">
+			  <ul class='etabs'>
+				<li class='tab'><a href="#income" >支出</a></li>
+				<li class='tab'><a href="#expense">收入</a></li>
+			  </ul>
+			  <div class='panel-container'>
+					<div id="income">
+						<div id="tb-img" class="img-box">
+							<img class="img-show" src="../images/default-img.gif"/>
+						</div>
+						<select class="easyui-combobox" name="state" style="width:200px;">
+							<option value="AL">Alabama</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+							<option value="AR">Arkansas</option>
+						</select>
 					</div>
-					<select class="easyui-combobox" name="state" style="width:200px;">
-						<option value="AL">Alabama</option>
-						<option value="AK">Alaska</option>
-						<option value="AZ">Arizona</option>
-						<option value="AR">Arkansas</option>
-					</select>
+					<div id="expense">
+					   <h2>JS for these tabs</h2>
+					</div>
 				</div>
-				<div id="expense">
-				   <h2>JS for these tabs</h2>
-				</div>
-				<div id="switch">
-		   			<h2>CSS Styles for these tabs</h2>
-		   		</div>
-	   		</div>
+			</div>
 		</div>
 	</div>
 </body>
