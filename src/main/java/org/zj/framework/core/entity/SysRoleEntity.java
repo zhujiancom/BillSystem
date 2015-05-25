@@ -11,10 +11,11 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.config.GlobalSettings;
+import org.zj.framework.core.config.GlobalConstants;
+import org.zj.framework.core.entity.base.AccessoryEntity;
 
 @Entity
-@Table(name="C_SYS_ROLE",schema=GlobalSettings.MYSQL_DB_SCHEMA)
+@Table(name="C_SYS_ROLE",schema=GlobalConstants.DEFAULT_MYSQL_SCHEMA)
 //oralce - @SequenceGenerator(name="CORE_SEQ", catalog=GlobalConfig.ORACLE_SCHEMA , sequenceName="COMMON_SEQ",allocationSize=1,initialValue=1)
 public class SysRoleEntity extends AccessoryEntity {
 	/**

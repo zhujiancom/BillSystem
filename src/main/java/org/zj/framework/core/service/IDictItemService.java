@@ -8,4 +8,8 @@ public interface IDictItemService {
 	DictItem getDictItem(String groupCode,String itemCode);
 	
 	List<DictItem> getDictItems(String groupCode);
+	
+	void rwCreateDictItem(DictItem item);
+	
+	void rwCreateDictItem(DictItem[] items);
 }

@@ -31,4 +31,14 @@ public class DictItemServiceImpl extends BaseService<DictItem, Long> implements
 		return items;
 	}
 
+	@Override
+	public void rwCreateDictItem(DictItem item) {
+		super.rwCreate(item);
+	}
+
+	@Override
+	public void rwCreateDictItem(DictItem[] items) {
+		super.rwCreate(items);
+	}
+
 }

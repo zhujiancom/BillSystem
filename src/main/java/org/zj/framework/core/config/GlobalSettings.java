@@ -27,8 +27,6 @@ import org.zj.framework.tools.StringUtils;
  */
 public class GlobalSettings{
 	private final Log logger = LogFactory.getLog(GlobalSettings.class);
-	public static final String ORACLE_DB_SCHEMA = GlobalConstants.DEFAULT_ORACLE_SCHEMA;
-	public static final String MYSQL_DB_SCHEMA = GlobalConstants.DEFAULT_MYSQL_SCHEMA;
 	private String loadedByFileName;
 	private boolean timerEnabled = GlobalConstants.DEFAULT_TIMER_ENABLED;
 	private String defaultLocale = GlobalConstants.DEFAULT_LOCALE;

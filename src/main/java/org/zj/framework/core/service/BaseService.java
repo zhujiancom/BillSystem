@@ -9,7 +9,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zj.framework.core.dao.DAOFacade;
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 
 /**
  * @Description

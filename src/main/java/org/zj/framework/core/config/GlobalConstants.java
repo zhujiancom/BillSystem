@@ -3,6 +3,7 @@
  */
 package org.zj.framework.core.config;
 
+
 /**
  * @Description
  * @author zj
@@ -20,7 +21,7 @@ public class GlobalConstants{
 	 * DB schema
 	 */
 	public final static String DEFAULT_ORACLE_SCHEMA="frypan";
-	public final static String DEFAULT_MYSQL_SCHEMA="frypan";
+	public final static String DEFAULT_MYSQL_SCHEMA="billsystem";
 
 	/**
 	 * 是否开启定时器

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 import org.zj.framework.core.enums.CommonEnums;
 
 /**

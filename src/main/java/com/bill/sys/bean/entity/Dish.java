@@ -17,7 +17,7 @@ import javax.persistence.Version;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.zj.framework.core.entity.BaseEntity;
+import org.zj.framework.core.entity.base.BaseEntity;
 
 /**
  * 

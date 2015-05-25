@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import org.zj.framework.core.config.GlobalSettings;
+import org.zj.framework.core.config.GlobalConstants;
+import org.zj.framework.core.entity.base.AccessoryEntity;
+import org.zj.framework.core.enums.CommonEnums.Validity;
 
 /**
  * @Description
@@ -20,7 +24,7 @@ import org.zj.framework.core.config.GlobalSettings;
  *	
  */
 @Entity
-@Table(name="C_SYS_MODULE",schema=GlobalSettings.MYSQL_DB_SCHEMA)
+@Table(name="C_SYS_MODULE",schema=GlobalConstants.DEFAULT_MYSQL_SCHEMA)
 public class SysModuleEntity extends AccessoryEntity{
 	/**
 	 * 
@@ -38,6 +42,8 @@ public class SysModuleEntity extends AccessoryEntity{
 	private String mcode;
 
 	private String murl;
+	
+	private Validity validity;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -61,7 +67,7 @@ public class SysModuleEntity extends AccessoryEntity{
 		this.version = version;
 	}
 
-	@Column(name="MCNAME")
+	@Column(name="MODULE_CNAME")
 	public String getCname(){
 		return this.cname;
 	}
@@ -70,7 +76,7 @@ public class SysModuleEntity extends AccessoryEntity{
 		this.cname = cname;
 	}
 
-	@Column(name="MENAME")
+	@Column(name="MODULE_ENAME")
 	public String getEname(){
 		return this.ename;
 	}
@@ -79,7 +85,7 @@ public class SysModuleEntity extends AccessoryEntity{
 		this.ename = ename;
 	}
 
-	@Column(name="MCODE")
+	@Column(name="CODE")
 	public String getMcode(){
 		return this.mcode;
 	}
@@ -88,7 +94,17 @@ public class SysModuleEntity extends AccessoryEntity{
 		this.mcode = mcode;
 	}
 
-	@Column(name="MURL")
+	@Enumerated(EnumType.STRING)
+	@Column(name="validity")
+	public Validity getValidity() {
+		return validity;
+	}
+
+	public void setValidity(Validity validity) {
+		this.validity = validity;
+	}
+
+	@Column(name="MODULE_URL")
 	public String getMurl(){
 		return this.murl;
 	}

@@ -18,4 +18,23 @@ public final class CommonEnums {
 			return Y.equals(yn);
 		}
 	}
+	
+	/**
+	 * 
+	 * remark (备注): 有效性
+	 *
+	 * @author zj
+	 *	
+	 * 项目名称：BillSystem
+	 *
+	 * 类名称：Validity
+	 *
+	 * 包名称：org.zj.framework.core.enums
+	 *
+	 * Create Time: 2015年4月29日 下午3:50:37
+	 *
+	 */
+	public enum Validity{
+		Valid,Invalid
+	}
 }

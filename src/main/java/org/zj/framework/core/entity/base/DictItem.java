@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import org.zj.framework.core.entity.BaseEntity;
+import javax.persistence.Version;
 
 /**
  * 
@@ -55,6 +54,13 @@ public class DictItem extends BaseEntity {
 	
 	/* 描述*/
 	private String description;
+	
+	public DictItem(){}
+	
+	public DictItem(String groupCode,String itemCode){
+		this.groupCode = groupCode;
+		this.itemCode = itemCode;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -128,6 +134,7 @@ public class DictItem extends BaseEntity {
 	}
 
 	@Override
+	@Version
 	public Integer getVersion() {
 		return version;
 	}

@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import org.zj.framework.core.entity.BaseEntity;
+import javax.persistence.Version;
 
 /**
  * 
@@ -47,6 +46,14 @@ public class DictGroup extends BaseEntity {
 	
 	/* 字典组英文名称 */
 	private String groupEname;
+	
+	public DictGroup(){}
+	
+	public DictGroup(String groupCode,String groupCname,String groupEname){
+		this.groupCode = groupCode;
+		this.groupCname = groupCname;
+		this.groupEname = groupEname;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQL ID generator
@@ -93,6 +100,7 @@ public class DictGroup extends BaseEntity {
 	}
 
 	@Override
+	@Version
 	public Integer getVersion() {
 		return version;
 	}
