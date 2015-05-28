@@ -8,19 +8,9 @@
   -webkit-box-shadow: 1px 1px 1px #cac9d3;
   -moz-box-shadow: 1px 1px 1px #cac9d3;
   box-shadow: 1px 1px 1px #cac9d3;
+  margin:0 auto;
 }
-/**
-.tab{
-	list-style:none;
-	float:left;
-	line-height:@tab-height;
-	width:@tab-width;
-	height:@tab-height;
-	border: solid 1px #999; 
-	border-bottom: none; 
-	.border-radius(4px,4px);
-}
-*/
+
 .etabs {
   margin: 0;
   padding: 0;
@@ -30,24 +20,25 @@
   width: 140px;
   height: 32px;
   line-height: 32px;
-  background: #eee;
+  background: #FFFFF0;
   border: solid 1px #999;
   border-bottom: none;
   position:relative;
   left:-300px;
 }
 .tab a {
-  font-size: 14px;
-  line-height: 2em;
+	font-size:18px;
   display: block;
-  padding: 0 10px;
   outline: none;
+  height:32px;
+  width:138px;
+  text-decoration: none;
 }
 .tab a:hover {
-  text-decoration: underline;
+   font-weight: bold;
 }
 .tab.active {
-  background: #fff;
+  background: #FFE4B5;
   padding-top: 6px;
   position: relative;
   top: 1px;
