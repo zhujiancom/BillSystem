@@ -3,7 +3,7 @@
   -moz-border-radius: 0.5em 0.5em 0 0;
   border-radius: 0.5em 0.5em 0 0;
   width: 1005px;
-  height: 175px;
+  height: 200px;
   border: solid 1px #bfc4ca;
   -webkit-box-shadow: 1px 1px 1px #cac9d3;
   -moz-box-shadow: 1px 1px 1px #cac9d3;
@@ -18,8 +18,8 @@
 .tab {
   display: inline-block;
   width: 140px;
-  height: 32px;
-  line-height: 32px;
+  height: 40px;
+  line-height: 40px;
   background: #FFFFF0;
   border: solid 1px #999;
   border-bottom: none;
@@ -30,7 +30,7 @@
 	font-size:18px;
   display: block;
   outline: none;
-  height:32px;
+  height:40px;
   width:138px;
   text-decoration: none;
 }
@@ -41,7 +41,8 @@
   background: #FFE4B5;
   padding-top: 6px;
   position: relative;
-  top: 1px;
+  height:45px;
+  top: 2px;
   border-color: #666;
 }
 .tab a.active {
@@ -49,7 +50,46 @@
 }
 .panel-container {
   background: #fff;
-  border: solid #666 1px;
-  line-height: 140px;
+  border-top: solid #666 1px;
+  
 }
 /*# sourceMappingURL=easytab.css.map */
+.panel-box{
+	line-height:140px;
+  	overflow:auto;
+}
+.tb-l{
+	float:left;
+	height:120px;
+	margin:10px;
+	border:none;
+}
+.tb-m{
+	float:left;
+	height:40px;
+	line-height:40px;
+	border:none;
+}
+.tb-r{
+	float:left;
+	border:solid 1px #ccoocc;
+	height:130px;
+	margin-left:50px;
+}
+.tb-r img:hover{
+	cursor:pointer;
+}
+.img-show{
+	width:130px;
+	height:94px;
+}
+.tbu{
+	list-style:none;
+	width:100%;
+	overflow:auto;
+}
+.tbu li{
+	float:left;
+	width:200px;
+	margin-right:10px;
+}

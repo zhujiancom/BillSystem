@@ -2,8 +2,10 @@
 <html>
 <head>
 <title>菜单导航</title>
+<link rel="stylesheet" media="screen" href="../css/common.css">
 <link rel="stylesheet" media="screen" href="../css/reset.css">
 <link rel="stylesheet" media="screen" href="../css/menu.css">
+<link rel="stylesheet" media="screen" href="../css/main.css">
 <link rel="stylesheet" media="screen" href="../js/plugins/easytab/css/easytab.css">
 <link rel="stylesheet" type="text/css" href="../js/jeasyUI/themes/gray/easyui.css">
 <link rel="stylesheet" type="text/css" href="../js/jeasyUI/themes/icon.css">
@@ -37,14 +39,6 @@
 		margin:20px auto;
 		padding:0;
 	}
-	.img-box{
-		float:left;
-		margin:10px;
-	}
-	.img-show{
-		width:130px;
-		height:94px;
-	}
 </style>
 </head>
 <body>
@@ -66,23 +60,137 @@
 				<li class='tab'><a href="#expense">收入</a></li>
 			  </ul>
 			  <div class='panel-container'>
-					<div id="income">
-						<div id="tb-img" class="img-box">
-							<img class="img-show" src="../images/default-img.gif"/>
-						</div>
-						<select class="easyui-combobox" name="state" style="width:200px;">
-							<option value="AL">Alabama</option>
-							<option value="AK">Alaska</option>
-							<option value="AZ">Arizona</option>
-							<option value="AR">Arkansas</option>
-						</select>
+					<div id="income" class="panel-box">
+						<form>
+							<div class="tb-l">
+								<img class="img-show" src="../images/default-img.gif"/>
+							</div>
+							<div class="tb-m">
+								<ul id="tbu-1" class="tbu">
+									<li>
+										<label>分类：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">员工用餐</option>
+											<option value="AK">日常用品</option>
+											<option value="AZ">原材料</option>
+											<option value="AR">其他支出</option>
+										</select>
+									</li>
+									<li>
+										<label>账户：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">收银机</option>
+											<option value="AK">银行账户</option>
+										</select>
+									</li>
+									<li>
+										<label>金额：</label>
+										<input name="amount" type="text" class="input-text"/>
+									</li>
+								</ul>
+								<ul id="tbu-2" class="tbu">
+									<li>
+										<label>时间：</label>
+										<input name="" class="easyui-datebox" type="text" style="width:65%" data-options="formatter:dateFormater">
+									</li>
+									<li>
+										<label>项目：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">日常用品</option>
+											<option value="AK">员工支出</option>
+											<option value="AZ">原材料采购</option>
+										</select>
+									</li>
+								</ul>
+								<ul id="tbu-3" class="tbu">
+									<li>
+										<input name="" type="text" class="input-remark" placeholder="备注"/>
+									</li>
+								</ul>
+							</div>
+							<div class="tb-r">
+								<img src="../images/add_128x128.png" title="新增记录"/>
+							</div>
+						</form>
 					</div>
-					<div id="expense">
-					   <h2>JS for these tabs</h2>
+					<div id="expense" class="panel-box">
+					   <form>
+							<div class="tb-l">
+								<img class="img-show" src="../images/default-img.gif"/>
+							</div>
+							<div class="tb-m">
+								<ul id="tbu-1" class="tbu">
+									<li>
+										<label>分类：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">卖废品</option>
+											<option value="AR">其他收入</option>
+										</select>
+									</li>
+									<li>
+										<label>账户：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">收银机</option>
+											<option value="AK">银行账户</option>
+										</select>
+									</li>
+									<li>
+										<label>金额：</label>
+										<input name="amount" type="text" class="input-text"/>
+									</li>
+								</ul>
+								<ul id="tbu-2" class="tbu">
+									<li>
+										<label>时间：</label>
+										<input name="" class="easyui-datebox" type="text" style="width:65%" data-options="formatter:dateFormater">
+									</li>
+									<li>
+										<label>项目：</label>
+										<select class="easyui-combobox" name="state" style="width:130px;">
+											<option value="AL">营业收入</option>
+											<option value="AK">其他收入</option>
+										</select>
+									</li>
+								</ul>
+								<ul id="tbu-3" class="tbu">
+									<li>
+										<input name="" type="text" class="input-remark" placeholder="备注"/>
+									</li>
+								</ul>
+							</div>
+							<div class="tb-r">
+								<img src="../images/add_128x128.png" title="新增记录"/>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
+			<div id="content" class="content-box">
+				<div id="filter-tit">
+					<ul id="ft-date" class="ft-date">
+						<li id="ft-date-begin">2015.5.01</li>
+						<li> - </li>
+						<li id="ft-date-begin">2015.5.31</li>
+					</ul>
+					<ul class="ft-total" >
+						<li>
+							总支出：<span class="green">-</span><span class="green number">5236655</span>
+							总收入：<span class="orange">+</span><span class="orange number">5236655</span>
+							结余：    <span>256585</span><span>&nbsp;&nbsp;&nbsp;&nbsp;(默认单位：元)</span>
+						<li>
+					</ul>
+				</div>
+				<div id="filter-search-bar"></div>
+			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function dateFormater(date){
+			var y = date.getFullYear();
+			var m = date.getMonth()+1;
+			var d = date.getDate();
+			return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+		}
+	</script>
 </body>
 </html>

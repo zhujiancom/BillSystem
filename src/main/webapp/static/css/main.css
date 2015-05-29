@@ -1,0 +1,46 @@
+.content-box{
+	width: 1005px;
+	border: solid 1px #bfc4ca;
+  	-webkit-box-shadow: 1px 1px 1px #cac9d3;
+  	-moz-box-shadow: 1px 1px 1px #cac9d3;
+  	box-shadow: 1px 1px 1px #cac9d3;
+  	margin:20px auto;
+  	padding:5px 10px;
+}
+#filter-tit{
+	height:41px;
+	clear:both;
+	postion:relative;
+}
+
+#filter-tit .ft-date{
+	background:rgba(0,0,0,0) url("../images/rt_name.gif") no-repeat 0 6px;
+	display:inline;
+	float:left;
+	height:29px;
+	padding:12px 0 0 142px;
+}
+#filter-tit .ft-date li{
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+}
+
+#filter-tit .green{
+	color:#00a32c;
+}
+#filter-tit .number{
+	font-size:14px;
+}
+#filter-tit .orange{
+	color:#ff2400;
+}
+
+#filter-tit .ft-total{
+	float:right;
+	padding:13px 13px 0 0;
+}
+
+#filter-tit .ft-total li{
+	font-weight:bold;
+}
