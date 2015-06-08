@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>�˵�����</title>
+<title>菜单导航</title>
 <link rel="stylesheet" media="screen" href="../css/common.css">
 <link rel="stylesheet" media="screen" href="../css/reset.css">
 <link rel="stylesheet" media="screen" href="../css/menu.css">
@@ -46,18 +46,18 @@
 		<div id="header" class="header">
 			<div id="nav" class="nav">
 				<ul>
-					<li class="selected">��ҳ</li>
-					<li>����</li>
-					<li>�˻�</li>
-					<li>����</li>
+					<li class="selected">首页</li>
+					<li>记账</li>
+					<li>账户</li>
+					<li>设置</li>
 				</ul>
 			</div>
 		</div>
 		<div id="container">
 			<div id="tabs" class="tab-box">
 			  <ul class='etabs'>
-				<li class='tab'><a href="#income">֧��</a></li>
-				<li class='tab'><a href="#expense">����</a></li>
+				<li class='tab'><a href="#income">支出</a></li>
+				<li class='tab'><a href="#expense">收入</a></li>
 			  </ul>
 			  <div class='panel-container'>
 					<div id="income" class="panel-box">
@@ -68,48 +68,48 @@
 							<div class="tb-m">
 								<ul id="tbu-1" class="tbu">
 									<li>
-										<label>���ࣺ</label>
+										<label>分类：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">Ա���ò�</option>
-											<option value="AK">�ճ���Ʒ</option>
-											<option value="AZ">ԭ����</option>
-											<option value="AR">����֧��</option>
+											<option value="AL">员工用餐</option>
+											<option value="AK">日常用品</option>
+											<option value="AZ">原材料</option>
+											<option value="AR">其他支出</option>
 										</select>
 									</li>
 									<li>
-										<label>�˻���</label>
+										<label>账户：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">������</option>
-											<option value="AK">�����˻�</option>
+											<option value="AL">收银机</option>
+											<option value="AK">银行账户</option>
 										</select>
 									</li>
 									<li>
-										<label>��</label>
+										<label>金额：</label>
 										<input name="amount" type="text" class="input-text"/>
 									</li>
 								</ul>
 								<ul id="tbu-2" class="tbu">
 									<li>
-										<label>ʱ�䣺</label>
+										<label>时间：</label>
 										<input name="" class="easyui-datebox" type="text" style="width:65%" data-options="formatter:dateFormater">
 									</li>
 									<li>
-										<label>��Ŀ��</label>
+										<label>项目：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">�ճ���Ʒ</option>
-											<option value="AK">Ա��֧��</option>
-											<option value="AZ">ԭ���ϲɹ�</option>
+											<option value="AL">日常用品</option>
+											<option value="AK">员工支出</option>
+											<option value="AZ">原材料采购</option>
 										</select>
 									</li>
 								</ul>
 								<ul id="tbu-3" class="tbu">
 									<li>
-										<input name="" type="text" class="input-remark" placeholder="��ע"/>
+										<input name="" type="text" class="input-remark" placeholder="备注"/>
 									</li>
 								</ul>
 							</div>
 							<div class="tb-r">
-								<img src="../images/add_128x128.png" title="������¼"/>
+								<img src="../images/add_128x128.png" title="新增记录"/>
 							</div>
 						</form>
 					</div>
@@ -121,45 +121,45 @@
 							<div class="tb-m">
 								<ul id="tbu-1" class="tbu">
 									<li>
-										<label>���ࣺ</label>
+										<label>分类：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">����Ʒ</option>
-											<option value="AR">��������</option>
+											<option value="AL">卖废品</option>
+											<option value="AR">其他收入</option>
 										</select>
 									</li>
 									<li>
-										<label>�˻���</label>
+										<label>账户：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">������</option>
-											<option value="AK">�����˻�</option>
+											<option value="AL">收银机</option>
+											<option value="AK">银行账户</option>
 										</select>
 									</li>
 									<li>
-										<label>��</label>
+										<label>金额：</label>
 										<input name="amount" type="text" class="input-text"/>
 									</li>
 								</ul>
 								<ul id="tbu-2" class="tbu">
 									<li>
-										<label>ʱ�䣺</label>
+										<label>时间：</label>
 										<input name="" class="easyui-datebox" type="text" style="width:65%" data-options="formatter:dateFormater">
 									</li>
 									<li>
-										<label>��Ŀ��</label>
+										<label>项目：</label>
 										<select class="easyui-combobox" name="state" style="width:130px;">
-											<option value="AL">Ӫҵ����</option>
-											<option value="AK">��������</option>
+											<option value="AL">营业收入</option>
+											<option value="AK">其他收入</option>
 										</select>
 									</li>
 								</ul>
 								<ul id="tbu-3" class="tbu">
 									<li>
-										<input name="" type="text" class="input-remark" placeholder="��ע"/>
+										<input name="" type="text" class="input-remark" placeholder="备注"/>
 									</li>
 								</ul>
 							</div>
 							<div class="tb-r">
-								<img src="../images/add_128x128.png" title="������¼"/>
+								<img src="../images/add_128x128.png" title="新增记录"/>
 							</div>
 						</form>
 					</div>
@@ -174,9 +174,9 @@
 					</ul>
 					<ul class="ft-total" >
 						<li>
-							��֧����<span class="green">-</span><span class="green number">5236655</span>
-							�����룺<span class="orange">+</span><span class="orange number">5236655</span>
-							���ࣺ    <span>256585</span><span>&nbsp;&nbsp;&nbsp;&nbsp;(Ĭ�ϵ�λ��Ԫ)</span>
+							总支出：<span class="green">-</span><span class="green number">5236655</span>
+							总收入：<span class="orange">+</span><span class="orange number">5236655</span>
+							结余：    <span>256585</span><span>&nbsp;&nbsp;&nbsp;&nbsp;(默认单位：元)</span>
 						<li>
 					</ul>
 				</div>

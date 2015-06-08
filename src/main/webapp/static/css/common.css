@@ -11,7 +11,19 @@
 /* 	background-color:#FDF5E6; */
 	border:solid 1px #DCDCDC;
 	width:130px;
-	height:25px;
+	height:22px;
+	-webkit-border-radius: 0.5em 0.5em 0.5em 0.5em;
+ 	-moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+  	border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+.input-text:focus{
+	transition:border linear .2s,box-shadow linear .5s;
+ -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+ -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+ outline:none;border-color:rgba(220,220,220,.75);
+ box-shadow:0 0 8px rgba(220,220,220,.5);
+ -moz-box-shadow:0 0 8px rgba(220,220,220,.5);
+ -webkit-box-shadow:0 0 8px rgba(220,220,220,3);
 }
 .input-remark{
 	width:600px;
