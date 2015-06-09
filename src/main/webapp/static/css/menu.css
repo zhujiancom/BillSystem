@@ -14,8 +14,10 @@ body {
   color: white;
   font-weight: blod;
 }
-.header {
+header {
   margin: 0 auto;
+  position:relative;
+  width:80%;
 }
 @media screen {
   .nav ul {

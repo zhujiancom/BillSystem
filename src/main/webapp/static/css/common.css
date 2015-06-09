@@ -17,9 +17,9 @@
   	border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 .input-text:focus{
-	transition:border linear .2s,box-shadow linear .5s;
- -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
- -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+/* 	transition:border linear .2s,box-shadow linear .5s; */
+/*  -moz-transition:border linear .2s,-moz-box-shadow linear .5s; */
+/*  -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; */
  outline:none;border-color:rgba(220,220,220,.75);
  box-shadow:0 0 8px rgba(220,220,220,.5);
  -moz-box-shadow:0 0 8px rgba(220,220,220,.5);

@@ -1,0 +1,152 @@
+body {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url('../images/tex2res5.png') repeat center center #fafafa;
+}
+
+@font-face {
+    font-family: 'LeagueGothic';
+    src: url('../fonts/League_Gothic-webfont.eot');
+    src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/League_Gothic-webfont.woff') format('woff'),
+         url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('../fonts/League_Gothic-webfont.svg#LeagueGothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'LeagueGothic', Arial, Helvetica, sans-serif;
+	line-height: 100%;
+}
+
+h1 {
+	font-size: 80px;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+#content {
+	position: relative;
+	margin: 50px auto;
+	width: 960px;
+}
+
+.als-container {
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+}
+
+.als-viewport {
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+}
+
+.als-wrapper {
+	position: relative;
+	list-style: none;
+}
+
+.als-item {
+	position: relative;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+}
+
+.als-prev, .als-next {
+	position: absolute;
+	cursor: pointer;
+	clear: both;
+}
+
+#lista2 {
+	margin-bottom: 80px;
+}
+
+#lista2 .month-l{
+	float:left;
+}
+
+#lista2 .month-l li{
+	text-align:right;
+	line-height:20px;
+	padding-top:3px;
+	padding-left:3px;
+}
+#lista2 .month-r li{
+	text-align:right;
+	padding-top:3px;
+	padding-right:10px;
+	list-style:none;
+}
+
+#lista2 .month-num{
+	font-family: Georgia;
+	padding-right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	letter-spacing: -4px;
+}
+
+#lista2 .ml-income{
+	color:red;
+}
+
+#lista2 .ml-payout{
+	color:green;
+}
+
+#lista2 .als-item {
+	min-width: 138px;
+	margin:0;
+	min-height:50px;
+	background-image:url('../images/my-images/month_bg.gif');
+	background-repeat:no-repeat;
+	background-position:0 1px;
+}
+
+#lista2 .als-item:hover{
+	background-position:0 -49px;
+}
+
+#lista2 .choose{
+	background-position:0 -99px;
+}
+
+#lista2 .current-month{
+	background-position:0 -249px;
+}
+
+#lista2 .als-item img {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	margin-bottom: 8px;
+}
+
+#lista2 .als-prev, #lista2 .als-next {
+	left: 460px;
+	width: 22px;
+	height: 15px;
+}
+
+#lista2 .als-prev {
+	top: -25px;
+}
+
+#lista2 .als-next {
+	bottom: -20px;
+}
+
+#lista2 .als-item {
+	vertical-align: middle;
+}
